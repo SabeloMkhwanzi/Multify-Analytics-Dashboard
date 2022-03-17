@@ -102,33 +102,33 @@ export default function VerticalNarbar() {
         aria-label="Main Navigation"
       >
         <NavItem icon={BiAnalyse}>
-          <Link href="index">
+          <Link href="/summary">
             <Text textTransform="uppercase">Summary</Text>
           </Link>
         </NavItem>
         <NavItem icon={RiHandCoinFill}>
-          <Link href="#">
+          <Link href="/token">
             <Text textTransform="uppercase">Tokens</Text>
           </Link>
         </NavItem>
         <NavItem icon={GiTwoCoins}>
-          <Link href="#">
+          <Link href="/pairs">
             <Text textTransform="uppercase">Pairs</Text>
           </Link>
         </NavItem>
         <Divider />
         <NavItem icon={GiWallet}>
-          <Link href="#">
+          <Link href="/walletanalyse">
             <Text textTransform="uppercase">Wallet Analytics</Text>
           </Link>
         </NavItem>
         <NavItem icon={RiExchangeDollarFill}>
-          <Link href="#">
+          <Link href="/swapinterface">
             <Text textTransform="uppercase">Swap</Text>
           </Link>
         </NavItem>
         <NavItem icon={GiSuspensionBridge}>
-          <Link href="#">
+          <Link href="/bridgeinterface">
             <Text textTransform="uppercase">Bridge</Text>
           </Link>
         </NavItem>
@@ -156,17 +156,7 @@ export default function VerticalNarbar() {
         </DrawerContent>
       </Drawer>
       <Box ml={{ base: 0, md: 60 }} transition=".3s ease">
-        <Flex
-        // as="header"
-        // align="center"
-        // justify="space-between"
-        // w="full"
-        // px="4"
-        // bg={useColorModeValue("white", "gray.800")}
-        // borderBottomWidth="1px"
-        // borderColor={useColorModeValue("inherit", "gray.700")}
-        // h="14"
-        >
+        <Flex align="center" justify="space-between" px="4" h="14">
           <IconButton
             aria-label="Menu"
             display={{ base: "inline-flex", md: "none" }}

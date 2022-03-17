@@ -1,4 +1,6 @@
+/* eslint-disable @next/next/link-passhref */
 import React from "react";
+import Link from "next/link";
 
 import {
   chakra,
@@ -12,23 +14,24 @@ import {
   VStack,
   IconButton,
   CloseButton,
-  Avatar,
+  useColorMode,
+  Switch,
+  Text,
 } from "@chakra-ui/react";
 
 //import { Logo } from "@choc-ui/logo";
 
-import {
-  AiOutlineMenu,
-  AiFillHome,
-  AiOutlineInbox,
-  AiFillBell,
-} from "react-icons/ai";
+import { GiWallet, GiSuspensionBridge } from "react-icons/gi";
 
-import { BsFillCameraVideoFill, BsPlus } from "react-icons/bs";
+import { RiExchangeDollarFill } from "react-icons/ri";
+import { AiOutlineMenu } from "react-icons/ai";
+import ConnectButton from "../../Buttons/ConnectButton";
 
 export default function HorizontalNarbar() {
   const bg = useColorModeValue("white", "gray.800");
   const mobileNav = useDisclosure();
+  const { colorMode, toggleColorMode } = useColorMode();
+  const isDark = colorMode === "dark";
 
   return (
     <>
@@ -38,6 +41,7 @@ export default function HorizontalNarbar() {
         px={{ base: 2, sm: 4 }}
         py={4}
         shadow="md"
+        borderRadius="2xl"
       >
         <Flex alignItems="center" justifyContent="space-between" mx="auto">
           <HStack display="flex" spacing={3} alignItems="center">
@@ -67,27 +71,59 @@ export default function HorizontalNarbar() {
                 shadow="sm"
               >
                 <CloseButton
+                  borderRadius="2xl"
                   aria-label="Close menu"
                   justifySelf="self-start"
                   onClick={mobileNav.onClose}
                 />
-                <Button w="full" variant="ghost" leftIcon={<AiFillHome />}>
-                  Dashboard
-                </Button>
                 <Button
+                  bgColor="gray.900"
+                  borderRadius="2xl"
                   w="full"
-                  variant="solid"
-                  colorScheme="brand"
-                  leftIcon={<AiOutlineInbox />}
+                  variant="outlne"
+                  leftIcon={<RiExchangeDollarFill />}
                 >
-                  Inbox
+                  <Link href="/summary">
+                    <Text textTransform="uppercase" letterSpacing={1}>
+                      Home
+                    </Text>
+                  </Link>
                 </Button>
                 <Button
+                  borderRadius="2xl"
                   w="full"
                   variant="ghost"
-                  leftIcon={<BsFillCameraVideoFill />}
+                  leftIcon={<RiExchangeDollarFill />}
                 >
-                  Videos
+                  <Link href="/swapinterface">
+                    <Text textTransform="uppercase" letterSpacing={1}>
+                      Swap
+                    </Text>
+                  </Link>
+                </Button>
+                <Button
+                  borderRadius="2xl"
+                  w="full"
+                  variant="ghost"
+                  leftIcon={<GiSuspensionBridge />}
+                >
+                  <Link href="/bridgeinterface">
+                    <Text textTransform="uppercase" letterSpacing={1}>
+                      Bridge
+                    </Text>
+                  </Link>
+                </Button>
+                <Button
+                  borderRadius="2xl"
+                  w="full"
+                  variant="ghost"
+                  leftIcon={<GiWallet />}
+                >
+                  <Link href="/walletanalyse">
+                    <Text textTransform="uppercase" letterSpacing={1}>
+                      Wallet Analytics
+                    </Text>
+                  </Link>
                 </Button>
               </VStack>
             </Box>
@@ -103,23 +139,57 @@ export default function HorizontalNarbar() {
             </chakra.a>
 
             <HStack spacing={3} display={{ base: "none", md: "inline-flex" }}>
-              <Button variant="ghost" leftIcon={<AiFillHome />} size="sm">
-                Dashboard
-              </Button>
               <Button
-                variant="solid"
-                colorScheme="brand"
-                leftIcon={<AiOutlineInbox />}
+                bgColor="gray.800"
+                variant="outline"
+                borderRadius="xl"
+                leftIcon={<RiExchangeDollarFill />}
                 size="sm"
               >
-                Inbox
+                <Link href="/summary">
+                  <Text textTransform="uppercase" letterSpacing={1}>
+                    Home
+                  </Text>
+                </Link>
               </Button>
               <Button
+                bgColor="gray.900"
+                borderRadius="xl"
                 variant="ghost"
-                leftIcon={<BsFillCameraVideoFill />}
+                leftIcon={<RiExchangeDollarFill />}
                 size="sm"
               >
-                Videos
+                <Link href="/swapinterface">
+                  <Text textTransform="uppercase" letterSpacing={1}>
+                    Swap
+                  </Text>
+                </Link>
+              </Button>
+              <Button
+                bgColor="gray.900"
+                borderRadius="xl"
+                variant="ghost"
+                leftIcon={<GiSuspensionBridge />}
+                size="sm"
+              >
+                <Link href="/bridgeinterface">
+                  <Text textTransform="uppercase" letterSpacing={1}>
+                    Bridge
+                  </Text>
+                </Link>
+              </Button>
+              <Button
+                bgColor="gray.900"
+                borderRadius="xl"
+                variant="ghost"
+                leftIcon={<GiWallet />}
+                size="sm"
+              >
+                <Link href="/walletanalyse">
+                  <Text textTransform="uppercase" letterSpacing={1}>
+                    Wallet Analytics
+                  </Text>
+                </Link>
               </Button>
             </HStack>
           </HStack>
@@ -128,25 +198,18 @@ export default function HorizontalNarbar() {
             display={mobileNav.isOpen ? "none" : "flex"}
             alignItems="center"
           >
-            <Button colorScheme="brand" leftIcon={<BsPlus />}>
-              New Wallet
-            </Button>
-
-            <chakra.a
-              p={3}
-              color={useColorModeValue("gray.800", "inherit")}
-              rounded="sm"
-              _hover={{ color: useColorModeValue("gray.800", "gray.600") }}
-            >
-              <AiFillBell />
-              <VisuallyHidden>Notifications</VisuallyHidden>
-            </chakra.a>
-
-            <Avatar
-              size="sm"
-              name="Dan Abrahmov"
-              src="https://bit.ly/dan-abramov"
+            <ConnectButton />
+            {/* Button Here */}
+            <Switch
+              position="fixed"
+              top="1.5rem"
+              right="1rem"
+              color="green"
+              size="lg"
+              isChecked={isDark}
+              onChange={toggleColorMode}
             />
+            );
           </HStack>
         </Flex>
       </chakra.header>

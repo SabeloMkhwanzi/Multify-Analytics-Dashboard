@@ -1,8 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-//import { HorizontalNarbar } from "../components";
-import { VerticalNarbar } from "../components";
+import { HorizontalNarbar } from "../components";
+//import { VerticalNarbar } from "../components";
+import Summary from "./summary";
 
 const Home: NextPage = () => {
   return (
@@ -13,8 +14,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
-        {/* <HorizontalNarbar /> */}
-        <VerticalNarbar />
+        <Summary />
       </div>
     </div>
   );
