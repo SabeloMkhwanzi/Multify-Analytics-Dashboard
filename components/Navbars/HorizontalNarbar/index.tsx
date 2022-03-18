@@ -203,7 +203,7 @@ export default function HorizontalNarbar() {
             <Switch
               position="fixed"
               top="1.5rem"
-              right="1rem"
+              right="3rem"
               color="green"
               size="lg"
               isChecked={isDark}
