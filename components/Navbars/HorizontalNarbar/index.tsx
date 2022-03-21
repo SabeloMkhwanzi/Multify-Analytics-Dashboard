@@ -1,9 +1,10 @@
 /* eslint-disable @next/next/link-passhref */
 import React from "react";
-import Link from "next/link";
+//import Link from "next/link";
 
 import {
   chakra,
+  Link,
   Box,
   Flex,
   useColorModeValue,
