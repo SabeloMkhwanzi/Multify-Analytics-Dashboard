@@ -4,24 +4,27 @@ import {
   Select,
   Input,
   FormControl,
-  FormLabel,
+  Radio,
+  RadioGroup,
+  Stack,
 } from "@chakra-ui/react";
 
 import { useForm } from "react-hook-form";
 
 export default function SelectButton(props) {
+  //const [value, setValue] = React.useState("1");
   useForm();
 
   return (
     <form onSubmit={props.getWallet}>
       <FormControl>
-        <FormLabel htmlFor="email">Account Address</FormLabel>
         <Input
           maxW={700}
           my={2}
-          letterSpacing={4}
+          letterSpacing={2}
           type="text"
           name="userAddress"
+          textTransform="uppercase"
           placeholder="ACCOUNT ADDRESS 0x00f7.... OR ENS DOMAIN"
         />
         <Button
@@ -64,6 +67,47 @@ export default function SelectButton(props) {
             Fantom
           </option>
         </Select>
+
+        <RadioGroup
+          my={5}
+          textAlign="left"
+          maxW={150}
+          name="walletsStatus"
+          type="number"
+          defaultValue="balances_v2"
+        >
+          <Stack
+            spacing={5}
+            direction="row"
+            textTransform="uppercase"
+            fontWeight="semibold"
+          >
+            <Radio
+              size="md"
+              colorScheme="red"
+              name="walletsStatus"
+              value="balances_v2"
+            >
+              Balances
+            </Radio>
+            <Radio
+              size="md"
+              name="walletsStatus"
+              colorScheme="green"
+              value="portfolio_v2"
+            >
+              Portfolio
+            </Radio>
+            <Radio
+              size="md"
+              colorScheme="orange"
+              name="walletsStatus"
+              value="transactions_v2"
+            >
+              Transactions
+            </Radio>
+          </Stack>
+        </RadioGroup>
       </FormControl>
     </form>
   );
