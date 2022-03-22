@@ -22,8 +22,8 @@
     "components/Navbars/VerticalNarbar/index.tsx",
     "components/DefiInterfaces/SwapInterface/index.tsx",
     "pages/swapinterface.tsx",
-    "components/DefiInterfaces/WalletInterface/index.js",
-    "components/DefiInterfaces/WalletInterface/select.js"
+    "components/DefiInterfaces/WalletInterface/index.tsx",
+    "components/DefiInterfaces/WalletInterface/SelectButton.tsx"
   ],
   "exclude": ["node_modules"]
 }
