@@ -21,7 +21,9 @@
     "**/*.tsx",
     "components/Navbars/VerticalNarbar/index.tsx",
     "components/DefiInterfaces/SwapInterface/index.tsx",
-    "pages/swapinterface.tsx"
+    "pages/swapinterface.tsx",
+    "components/DefiInterfaces/WalletInterface/index.js",
+    "components/DefiInterfaces/WalletInterface/select.js"
   ],
   "exclude": ["node_modules"]
 }

@@ -1,5 +1,7 @@
 {
   "cSpell.words": [
+    "APIKEY",
+    "Arbitrum",
     "bridgeinterface",
     "chakra",
     "Chakra",
@@ -10,6 +12,7 @@
     "swapinterface",
     "vercel",
     "Vercel",
-    "wagmi"
+    "wagmi",
+    "Wellets"
   ]
 }

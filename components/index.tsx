@@ -13,3 +13,4 @@ export { default as VerticalNarbar } from "./Navbars/VerticalNarbar";
 export { default as SearchInput } from "./SearchInput";
 export { default as Tokens } from "./Tables/Tokens";
 export { default as Pairs } from "./Tables/Pairs";
+export { default as selectDropdown } from "./selectDropdown";

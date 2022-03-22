@@ -9,11 +9,12 @@ declare var window: any;
 let darkMode = true;
 
 export default function Swapinterface() {
+  // Web3 provider
+  const [ethereum, setEthereum] = useState();
+
   // Infura endpoint
   const jsonRpcEndpoint = process.env.REACT_APP_RPC_ENDPOINT;
 
-  // Web3 provider
-  const [ethereum, setEthereum] = useState();
   useEffect(() => {
     setEthereum(window.ethereum);
   }, []);
