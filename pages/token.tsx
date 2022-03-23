@@ -1,6 +1,6 @@
 import React from "react";
-import { VerticalNarbar } from "../components";
+import { VerticalNavToken } from "../components";
 
 export default function token() {
-  return <VerticalNarbar />;
+  return <VerticalNavToken />;
 }

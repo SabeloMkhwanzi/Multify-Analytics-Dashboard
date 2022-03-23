@@ -2,7 +2,6 @@
 /* eslint-disable @next/next/link-passhref */
 import {
   Box,
-  Collapse,
   Divider,
   Drawer,
   DrawerContent,
@@ -22,7 +21,7 @@ import { RiHandCoinFill, RiExchangeDollarFill } from "react-icons/ri";
 import { BiAnalyse } from "react-icons/bi";
 import Link from "next/link";
 
-import { SocialMediaButton, DarkModeButton } from "../..";
+import { SocialMediaButton, DarkModeButton, Tokens } from "../../..";
 
 //import { Logo } from "@choc-ui/logo";
 
@@ -112,8 +111,8 @@ export default function VerticalNarbar() {
           </Link>
         </NavItem>
         <NavItem icon={GiTwoCoins}>
-          <Link href="/pairs">
-            <Text textTransform="uppercase">Pairs</Text>
+          <Link href="/pools">
+            <Text textTransform="uppercase">Pools</Text>
           </Link>
         </NavItem>
         <Divider />
@@ -166,7 +165,9 @@ export default function VerticalNarbar() {
           />
         </Flex>
 
-        <Box as="main">{/* Add content here, remove div below  */}</Box>
+        <Box as="main">
+          <Tokens />
+        </Box>
       </Box>
     </Box>
   );

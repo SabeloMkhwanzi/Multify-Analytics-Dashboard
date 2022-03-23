@@ -1,10 +1,6 @@
 import React from "react";
-import { VerticalNarbar } from "../components";
+import { VerticalNavSum } from "../components";
 
 export default function Summary() {
-  return (
-    <div>
-      <VerticalNarbar />
-    </div>
-  );
+  return <VerticalNavSum />;
 }

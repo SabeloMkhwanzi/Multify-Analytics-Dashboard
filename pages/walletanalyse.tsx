@@ -1,6 +1,11 @@
 import React from "react";
 import styles from "../styles/Home.module.css";
-import { HorizontalNarbar, WalletInterface } from "../components";
+import {
+  HorizontalNarbar,
+  Pools,
+  Tokens,
+  WalletInterface,
+} from "../components";
 
 export default function walletanalyse() {
   return (

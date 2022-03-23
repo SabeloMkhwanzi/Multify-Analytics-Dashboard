@@ -6,13 +6,13 @@ import DexSelectBtn from "../DexSelectBtn";
 //API Key
 const apikey = "ckey_4e73d56514984838ab3206fbaf4";
 
-class Tokens extends Component {
+class Pools extends Component {
   state = {
     items: [],
   };
 
-  //Tokens endpoint xy=k
-  //https://api.covalenthq.com/v1/1/xy=k/uniswap_v2/tokens/?quote-currency=USD&format=JSON&key=ckey_4e73d56514984838ab3206fbaf4
+  //Pools endpoint xy=k
+  //https://api.covalenthq.com/v1/${chainId}/xy=k/${dexName}/pools/?quote-currency=USD&format=JSON&key=${apikey}
 
   getApi = async (e: {
     target: {
@@ -29,7 +29,7 @@ class Tokens extends Component {
     e.preventDefault();
 
     const api_call = await fetch(
-      `https://api.covalenthq.com/v1/${chainId}/xy=k/${dexName}/tokens/?quote-currency=USD&format=JSON&key=${apikey}`
+      `https://api.covalenthq.com/v1/${chainId}/xy=k/${dexName}/pools/?quote-currency=USD&format=JSON&key=${apikey}`
     );
     const data = await api_call.json();
     this.setState({ items: data.data.items });
@@ -53,7 +53,7 @@ class Tokens extends Component {
         <Box>
           <ul>
             {this.state.items.map((item) => (
-              <li key={item.contract_address}>{item.dex_name}</li>
+              <li key={item.exchange}>{item.dex_name}</li>
             ))}
           </ul>
         </Box>
@@ -61,11 +61,18 @@ class Tokens extends Component {
     );
   }
 }
-export default Tokens;
+export default Pools;
 
-//network exchange tokens
-//https://api.covalenthq.com/v1/${chainID}/xy=k/${dexName}/tokens/?key=${APIKey}
-//https://api.covalenthq.com/v1/1/xy=k/uniswap_v2/tokens/?quote-currency=USD&format=JSON&key=ckey_4e73d56514984838ab3206fbaf4
+//Pools
+//https://api.covalenthq.com/v1/1/xy=k/uniswap_v2/pools/?quote-currency=USD&format=JSON&key=ckey_4e73d56514984838ab3206fbaf4
+
+// supported DEXes
+//https://api.covalenthq.com/v1/xy=k/supported_dexes/?quote-currency=USD&format=JSON&key=ckey_4e73d56514984838ab3206fbaf4
+
+//pools by address
+//https://api.covalenthq.com/v1/1/xy=k/sushiswap/pools/address/0xdAC17F958D2ee523a2206206994597C13D831ec7/?quote-currency=USD&format=JSON&tickers=usdt&page-number=10&key=ckey_4e73d56514984838ab3206fbaf4
+
+//Summary overview
 
 // health data
 //https://api.covalenthq.com/v1/1/xy=k/uniswap_v2/health/?quote-currency=USD&format=JSON&key=ckey_4e73d56514984838ab3206fbaf4

@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function index() {
+export default function ChainsButton() {
   return <div>index</div>;
 }
