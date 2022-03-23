@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import {
   Button,
   Select,
@@ -11,7 +11,18 @@ import {
 import { useForm } from "react-hook-form";
 
 export default function SelectButton(props) {
+  const ref = useRef(null);
   useForm();
+
+  const myfunc = () => {
+    console.log("I was activated 1 seconds later");
+  };
+
+  useEffect(() => {
+    setTimeout(() => {
+      ref.current.click();
+    }, 1000);
+  }, []);
 
   return (
     <form onSubmit={props.getApi}>
@@ -40,7 +51,14 @@ export default function SelectButton(props) {
               Fantom
             </option>
           </Select>
-          <Button borderRadius="lg" right="0" colorScheme="teal" type="submit">
+          <Button
+            ref={ref}
+            onClick={myfunc}
+            borderRadius="lg"
+            right="0"
+            colorScheme="teal"
+            type="submit"
+          >
             Search
           </Button>
         </Stack>
