@@ -1,26 +1,19 @@
 import React, { Component } from "react";
 import { Box, Text } from "@chakra-ui/react";
 
-import DexSelectBtn from "../DexSelectBtn";
-import { SupportedDexes } from "../..";
-
 //API Key
 const apikey = "ckey_4e73d56514984838ab3206fbaf4";
 
-class Overview extends Component {
+class Health extends Component {
   state = {
     items: [],
   };
 
   //xy=k is a generalized Uniswap-like endpoints for exchanges on various chains.
-
-  //Summary overview
-  //ecosystem chart data
-  //https://api.covalenthq.com/v1/1/xy=k/uniswap_v2/ecosystem/?quote-currency=USD&format=JSON&key=ckey_4e73d56514984838ab3206fbaf4
   // health data
   //https://api.covalenthq.com/v1/1/xy=k/uniswap_v2/health/?quote-currency=USD&format=JSON&key=ckey_4e73d56514984838ab3206fbaf4
 
-  getApi = async (e: {
+  getApiHealth = async (e: {
     target: {
       elements: {
         chainId: { value: any };
@@ -35,7 +28,7 @@ class Overview extends Component {
     e.preventDefault();
 
     const api_call = await fetch(
-      `https://api.covalenthq.com/v1/${chainId}/xy=k/${dexName}/ecosystem/?quote-currency=USD&format=JSON&key=${apikey}`
+      `https://api.covalenthq.com/v1/${chainId}/xy=k/${dexName}/health/?quote-currency=USD&format=JSON&key=${apikey}`
     );
     const data = await api_call.json();
     this.setState({ items: data.data.items });
@@ -45,7 +38,7 @@ class Overview extends Component {
 
   render() {
     return (
-      <>
+      <div>
         <Text
           letterSpacing={2}
           fontSize="3xl"
@@ -53,21 +46,21 @@ class Overview extends Component {
           decoration="lightblue"
           textTransform="uppercase"
         >
-          Summary Analytics
+          Health
         </Text>
 
-        <DexSelectBtn getApi={this.getApi} />
+        {/* <DexSelectBtn getApi={this.getApiHealth} /> */}
         <Box>
-          <ul>
-            {this.state.items.map((item) => (
-              <li key={item.chain_id}>{item.dex_name}</li>
-            ))}
-          </ul>
+          {this.state.items.map((item) => (
+            <ul key={item.latest_block_height}>
+              <li>{item.latest_block_signed_at}</li>
+              <li>{item.synced_block_height}</li>
+              <li>{item.synced_block_signed_at}</li>
+            </ul>
+          ))}
         </Box>
-
-        {/* <SupportedDexes /> */}
-      </>
+      </div>
     );
   }
 }
-export default Overview;
+export default Health;

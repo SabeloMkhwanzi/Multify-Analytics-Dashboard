@@ -27,7 +27,8 @@
     "components/Tables/Pools/index.tsx",
     "components/Buttons/ChainsButton/index.js",
     "components/Buttons/ChainsButton/index.js",
-    "components/Categroy/DexSelectBtn/index.js"
+    "components/Categroy/DexSelectBtn/index.js",
+    "components/Category/SupportedDexes/index.js"
   ],
   "exclude": ["node_modules"]
 }

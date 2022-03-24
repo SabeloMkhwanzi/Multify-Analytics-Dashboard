@@ -22,6 +22,7 @@ import { BiAnalyse } from "react-icons/bi";
 import Link from "next/link";
 
 import { DarkModeButton, SocialMediaButton } from "../../..";
+import Overview from "../../../Category/Overview";
 
 //import { Logo } from "@choc-ui/logo";
 
@@ -166,7 +167,7 @@ export default function VerticalNarbar() {
         </Flex>
 
         <Box as="main">
-          <Text>Hello world</Text>{" "}
+          <Overview />
         </Box>
       </Box>
     </Box>

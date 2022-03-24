@@ -1,6 +1,11 @@
 import React from "react";
-import { HorizontalNarbar } from "../components";
+import { HorizontalNarbar, SupportedDexes } from "../components";
 
 export default function bridgeinterface() {
-  return <HorizontalNarbar />;
+  return (
+    <>
+      <HorizontalNarbar />
+      <SupportedDexes />
+    </>
+  );
 }

@@ -58,7 +58,7 @@ class Pools extends Component {
           decoration="lightblue"
           textTransform="uppercase"
         >
-          Wallet Analytics
+          Tokens Analytics
         </Text>
         <DexSelectBtn getApi={this.getApi} />
         <Box>
