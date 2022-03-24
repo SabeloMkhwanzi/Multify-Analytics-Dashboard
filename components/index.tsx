@@ -20,4 +20,3 @@ export { default as VerticalNavSum } from "./Navbars/VerticalNarbar/VerticalNavS
 export { default as Overview } from "./Category/Overview";
 export { default as Health } from "./Category/Health";
 export { default as SupportedDexes } from "./Category/SupportedDexes";
-export { default as DexlistCard } from "./Category/SupportedDexes/DexlistCard";
