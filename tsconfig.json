@@ -28,7 +28,9 @@
     "components/Buttons/ChainsButton/index.js",
     "components/Buttons/ChainsButton/index.js",
     "components/Categroy/DexSelectBtn/index.js",
-    "components/Category/SupportedDexes/index.js"
+    "components/Category/SupportedDexes/index.js",
+    "components/Category/Overview/index.js",
+    "components/Category/Tokens/index.js"
   ],
   "exclude": ["node_modules"]
 }
