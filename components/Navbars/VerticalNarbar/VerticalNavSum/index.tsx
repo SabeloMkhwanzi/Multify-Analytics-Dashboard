@@ -174,9 +174,7 @@ export default function VerticalNarbar() {
           />
         </Flex>
 
-        <Box as="main">
-          <Overview />
-        </Box>
+        <Overview />
       </Box>
     </Box>
   );

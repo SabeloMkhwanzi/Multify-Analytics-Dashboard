@@ -30,7 +30,10 @@
     "components/Categroy/DexSelectBtn/index.js",
     "components/Category/SupportedDexes/index.js",
     "components/Category/Overview/index.js",
-    "components/Category/Tokens/index.js"
+    "components/Category/Tokens/index.js",
+    "components/Category/Tokens/TokenTable/index.js",
+    "components/Category/Pools/index.js",
+    "components/Category/Pools/PoolTable/index.js"
   ],
   "exclude": ["node_modules"]
 }

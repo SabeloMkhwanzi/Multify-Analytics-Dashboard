@@ -76,8 +76,8 @@ export default function VerticalNarbar() {
       pb="10"
       overflowX="hidden"
       overflowY="auto"
-      bg={useColorModeValue("white", "gray.800")}
-      borderColor={useColorModeValue("inherit", "gray.700")}
+      bg={useColorModeValue("white", "#243036")}
+      borderColor={useColorModeValue("inherit", "#243036")}
       borderRightWidth="1px"
       w="60"
       {...props}
@@ -96,39 +96,47 @@ export default function VerticalNarbar() {
       <Flex
         direction="column"
         as="nav"
-        fontSize="sm"
-        color="gray.600"
+        fontSize="lg"
+        color="gray.500"
         aria-label="Main Navigation"
+        fontWeight="semibold"
       >
         <NavItem icon={BiAnalyse}>
           <Link href="/summary">
-            <Text textTransform="uppercase">Summary</Text>
+            <Text>Summary</Text>
           </Link>
         </NavItem>
         <NavItem icon={RiHandCoinFill}>
           <Link href="/token">
-            <Text textTransform="uppercase">Tokens</Text>
+            <Text>Tokens</Text>
           </Link>
         </NavItem>
         <NavItem icon={GiTwoCoins}>
           <Link href="/pools">
-            <Text textTransform="uppercase">Pools</Text>
+            <Text>Pools</Text>
           </Link>
         </NavItem>
-        <Divider />
+        <Box
+          borderColor="gray.600"
+          alignContent="space-between"
+          mx={6}
+          maxWidth={180}
+        >
+          <Divider />
+        </Box>
         <NavItem icon={GiWallet}>
           <Link href="/walletanalyse">
-            <Text textTransform="uppercase">Wallet Analytics</Text>
+            <Text>Wallet Analytics</Text>
           </Link>
         </NavItem>
         <NavItem icon={RiExchangeDollarFill}>
           <Link href="/swapinterface">
-            <Text textTransform="uppercase">Swap</Text>
+            <Text>Swap</Text>
           </Link>
         </NavItem>
         <NavItem icon={GiSuspensionBridge}>
           <Link href="/bridgeinterface">
-            <Text textTransform="uppercase">Bridge</Text>
+            <Text>Bridge</Text>
           </Link>
         </NavItem>
       </Flex>
@@ -140,7 +148,7 @@ export default function VerticalNarbar() {
   return (
     <Box
       as="section"
-      bg={useColorModeValue("gray.50", "gray.700")}
+      bg={useColorModeValue("gray.50", "gray.900")}
       minH="100vh"
     >
       <SidebarContent display={{ base: "none", md: "unset" }} />
