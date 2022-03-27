@@ -22,3 +22,6 @@ export { default as Health } from "./Category/Health";
 export { default as DexTicker } from "./Category/DexTicker";
 export { default as TokenTable } from "./Category/Tokens/TokenTable";
 export { default as PoolTable } from "./Category/Pools/PoolTable";
+export { default as Balances } from "./DefiInterfaces/WalletInterface/Balances";
+export { default as Portfolio } from "./DefiInterfaces/WalletInterface/Portfolio";
+export { default as Transaction } from "./DefiInterfaces/WalletInterface/Transaction";

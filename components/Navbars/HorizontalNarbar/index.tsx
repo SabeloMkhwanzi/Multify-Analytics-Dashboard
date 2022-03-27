@@ -37,11 +37,12 @@ export default function HorizontalNarbar() {
   return (
     <>
       <chakra.header
-        bg={bg}
+        bg="#243036"
         w="full"
         px={{ base: 2, sm: 4 }}
         py={4}
         shadow="md"
+        borderColor="gray.500"
         borderRadius="2xl"
       >
         <Flex alignItems="center" justifyContent="space-between" mx="auto">
@@ -72,7 +73,7 @@ export default function HorizontalNarbar() {
                 shadow="sm"
               >
                 <CloseButton
-                  borderRadius="2xl"
+                  borderRadius="lg"
                   aria-label="Close menu"
                   justifySelf="self-start"
                   onClick={mobileNav.onClose}
@@ -82,6 +83,7 @@ export default function HorizontalNarbar() {
                   borderRadius="2xl"
                   w="full"
                   variant="outlne"
+                  color="#00AF91"
                   leftIcon={<RiExchangeDollarFill />}
                 >
                   <Link href="/summary">
@@ -141,6 +143,7 @@ export default function HorizontalNarbar() {
 
             <HStack spacing={3} display={{ base: "none", md: "inline-flex" }}>
               <Button
+                color="#00AF91"
                 bgColor="gray.800"
                 variant="outline"
                 borderRadius="xl"
@@ -205,7 +208,7 @@ export default function HorizontalNarbar() {
               position="fixed"
               top="1.5rem"
               right="3rem"
-              color="green"
+              colorScheme="teal"
               size="lg"
               isChecked={isDark}
               onChange={toggleColorMode}

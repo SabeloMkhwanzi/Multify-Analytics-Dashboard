@@ -7,68 +7,71 @@ import {
   Radio,
   RadioGroup,
   Stack,
+  Flex,
 } from "@chakra-ui/react";
 
 import { useForm } from "react-hook-form";
 
-export default function SelectButton(props) {
+export default function SelectButton({ getWallet }) {
   //const [value, setValue] = React.useState("1");
   useForm();
 
   return (
-    <form onSubmit={props.getWallet}>
+    <form onSubmit={getWallet}>
       <FormControl>
-        <Input
-          maxW={700}
-          my={2}
-          letterSpacing={2}
-          type="text"
-          name="userAddress"
-          textTransform="uppercase"
-          placeholder="ACCOUNT ADDRESS 0x00f7.... OR ENS DOMAIN"
-        />
-        <Button
-          bottom="2.5"
-          borderRadius="lg"
-          right="0"
-          mx={2}
-          mt={4}
-          colorScheme="teal"
-          type="submit"
-        >
-          ANALYSE
-        </Button>
-        <Select
-          my={2}
-          textAlign="center"
-          maxW={150}
-          name="chainId"
-          type="number"
-        >
-          <option name="chainId" value="1">
-            Ethereum
-          </option>
-          <option name="chainId" value="137">
-            Polygon
-          </option>
-          <option name="chainId" value="43114">
-            Avalanche
-          </option>
-          <option name="chainId" value="56">
-            Binance
-          </option>
-          <option name="chainId" value="1284">
-            Moonbeam
-          </option>
-          <option name="chainId" value="42161">
-            Arbitrum
-          </option>
-          <option name="chainId" value="250">
-            Fantom
-          </option>
-        </Select>
+        <Stack spacing={1} direction="row">
+          <Input
+            borderColor="gray.500"
+            maxW={700}
+            letterSpacing={2}
+            type="text"
+            name="userAddress"
+            textTransform="uppercase"
+            placeholder="ACCOUNT ADDRESS 0x00f7.... OR ENS DOMAIN"
+          />
 
+          <Select
+            textAlign="center"
+            maxW={150}
+            borderColor="gray.500"
+            name="chainId"
+            type="number"
+            bg="#303E46"
+          >
+            <option name="chainId" value="1">
+              Ethereum
+            </option>
+            <option name="chainId" value="137">
+              Polygon
+            </option>
+            <option name="chainId" value="43114">
+              Avalanche
+            </option>
+            <option name="chainId" value="56">
+              Binance
+            </option>
+            <option name="chainId" value="1284">
+              Moonbeam
+            </option>
+            <option name="chainId" value="42161">
+              Arbitrum
+            </option>
+            <option name="chainId" value="250">
+              Fantom
+            </option>
+          </Select>
+          <Button
+            w={150}
+            borderRadius="lg"
+            right="0"
+            bgColor="#00AF91"
+            type="submit"
+          >
+            ANALYSE
+          </Button>
+        </Stack>
         <RadioGroup
+          borderColor="gray.500"
           my={5}
           textAlign="left"
           maxW={150}

@@ -53,7 +53,7 @@ export default function WalletModel() {
             maxH={20}
             borderWidth={1}
             borderRadius="xl"
-            borderColor="blue.500"
+            borderColor="gray.500"
             right="4.5rem"
           >
             <Text fontSize="xs" as="address" isTruncated maxWidth={150}>
@@ -66,9 +66,9 @@ export default function WalletModel() {
             </Text> */}
           </Box>
           <Button
-            borderRadius="2xl"
+            borderRadius="lg"
             right="4.5rem"
-            colorScheme="blue"
+            bgColor="#00AF91"
             leftIcon={<GiWallet />}
             onClick={disconnect}
           >
@@ -81,9 +81,10 @@ export default function WalletModel() {
   return (
     <>
       <Button
-        borderRadius="2xl"
+        borderRadius="lg"
+        borderColor="gray.500"
         right="4.5rem"
-        colorScheme="blue"
+        bgColor="#00AF91"
         leftIcon={<GiWallet />}
         onClick={onOpen}
       >
@@ -101,7 +102,7 @@ export default function WalletModel() {
                 <Button
                   w="full"
                   borderRadius="full"
-                  bgColor={bgColor}
+                  bgColor="#00AF91"
                   disabled={!x.ready}
                   onClick={() => connect(x)}
                 >
@@ -118,7 +119,7 @@ export default function WalletModel() {
               </Box>
             )}
             <Button
-              borderRadius="full"
+              borderRadius="lg"
               color="white"
               bg="red.400"
               mr={3}
