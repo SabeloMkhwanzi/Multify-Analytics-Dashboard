@@ -3,6 +3,7 @@ import { Box, Text } from "@chakra-ui/react";
 
 import DexSelectBtn from "../DexSelectBtn";
 import PoolTable from "./PoolTable";
+import DexTicker from "../DexTicker";
 
 //API Key
 const apikey = "ckey_4e73d56514984838ab3206fbaf4";
@@ -33,6 +34,7 @@ function Pools() {
 
   return (
     <>
+      <DexTicker />
       <Box>
         <Text
           ml={10}
@@ -60,13 +62,6 @@ function Pools() {
       </Box>
       <DexSelectBtn getApi={getApi} />
       <PoolTable data={items} />
-      {/* <Box>
-        <ul>
-          {items.map((item) => (
-            <li key={item.exchange}>{item.dex_name}</li>
-          ))}
-        </ul>
-      </Box> */}
     </>
   );
 }

@@ -56,7 +56,7 @@ export default function SmallCentered() {
         <Container
           position="fixed"
           bottom="5rem"
-          left="1rem"
+          left="0.3rem"
           as={Stack}
           maxW={"6xl"}
           py={4}

@@ -3,9 +3,12 @@ import { Box, Text } from "@chakra-ui/react";
 
 import DexSelectBtn from "../DexSelectBtn";
 import TokenTable from "./TokenTable";
+import DexTicker from "../DexTicker";
+import TokenCards from "./TokenTable/TokenCards";
 
 //API Key
 const apikey = "ckey_4e73d56514984838ab3206fbaf4";
+//const API_KEY = process.env['REACT_APP_COVALENT_API']
 
 function Tokens() {
   const [items, setItems] = useState([]);
@@ -36,6 +39,7 @@ function Tokens() {
 
   return (
     <>
+      <DexTicker />
       <Box>
         <Text
           ml={10}
@@ -63,14 +67,6 @@ function Tokens() {
       </Box>
       <DexSelectBtn getApi={getApi} />
       <TokenTable data={items} />
-
-      {/* <Box>
-        <ul>
-          {items.map((item) => (
-            <li key={item.exchange}>{item.dex_name}</li>
-          ))}
-        </ul>
-      </Box> */}
     </>
   );
 }

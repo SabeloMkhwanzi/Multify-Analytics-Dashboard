@@ -6,8 +6,8 @@ export { default as SocialMediaButton } from "./Buttons/SocialMediaButton";
 export { default as BridgeInterface } from "./DefiInterfaces/BridgeInterface";
 export { default as SwapInterface } from "./DefiInterfaces/SwapInterface";
 export { default as WalletInterface } from "./DefiInterfaces/WalletInterface";
-export { default as BarGraph } from "./Graphs/BarGraph";
-export { default as LineGraph } from "./Graphs/LineGraph";
+export { default as LiquidityChart } from "./Graphs/LiquidityChart";
+export { default as VolumeChart } from "./Graphs/VolumeChart";
 export { default as HorizontalNarbar } from "./Navbars/HorizontalNarbar";
 export { default as VerticalNarbar } from "./Navbars/VerticalNarbar/VerticalNavToken";
 export { default as SearchInput } from "./SearchInput";
@@ -19,6 +19,6 @@ export { default as VerticalNavToken } from "../components/Navbars/VerticalNarba
 export { default as VerticalNavSum } from "./Navbars/VerticalNarbar/VerticalNavSum";
 export { default as Overview } from "./Category/Overview";
 export { default as Health } from "./Category/Health";
-export { default as SupportedDexes } from "./Category/SupportedDexes";
+export { default as DexTicker } from "./Category/DexTicker";
 export { default as TokenTable } from "./Category/Tokens/TokenTable";
 export { default as PoolTable } from "./Category/Pools/PoolTable";

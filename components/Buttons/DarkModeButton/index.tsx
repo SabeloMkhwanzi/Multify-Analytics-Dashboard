@@ -8,7 +8,7 @@ export default function DarkModeButton() {
     <Switch
       position="fixed"
       bottom="10rem"
-      left="2rem"
+      left="1rem"
       color="green"
       size="lg"
       isChecked={isDark}

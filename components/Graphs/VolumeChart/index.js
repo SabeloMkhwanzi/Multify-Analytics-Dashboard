@@ -2,7 +2,9 @@ import React from "react";
 import { Chart as ChartJS } from "chart.js/auto";
 import { Line } from "react-chartjs-2";
 
-export default function TimeSeriesChart({ quote, wei }) {
+const VolumeChart = ({ VolumePrice }) => {
+  console.log(VolumePrice);
+
   const options = {
     responsive: true,
     maintainAspectRatio: false,
@@ -10,7 +12,7 @@ export default function TimeSeriesChart({ quote, wei }) {
       legend: {
         position: "top",
         labels: {
-          color: "#3c9b6f",
+          color: "#00AF91",
           font: {
             size: 14,
           },
@@ -24,7 +26,7 @@ export default function TimeSeriesChart({ quote, wei }) {
         type: "linear",
         position: "left",
         ticks: {
-          color: "#b5ffd9",
+          color: "#00AF91",
           callback: function (value, index, values) {
             if (parseInt(value) >= 1000) {
               return (
@@ -47,29 +49,35 @@ export default function TimeSeriesChart({ quote, wei }) {
       },
       x: {
         ticks: {
-          color: "#6b46c1 ",
+          color: "#00AF91 ",
         },
       },
     },
   };
-  const graphData = {
+  const items = {
     datasets: [
       {
-        label: "Floor Price Quote 7 Days USD ($) ",
+        label: "Volume Quote 7d ($) ",
         yAxisID: "A",
-        data: quote,
-        borderColor: "#ae00fb",
-        backgroundColor: "#ae00fb",
+        data: VolumePrice,
+        borderColor: "#4A5568",
+        backgroundColor: "#00AF91",
+        borderWidth: "1px",
       },
       {
-        label: "Floor Price Wei 7 Days",
-        yAxisID: "B",
-        data: wei,
-        borderColor: "#b5ffd9",
-        backgroundColor: "#b5ffd9",
+        label: "Volume Quote 30d ($) ",
+        yAxisID: "A",
+        data: VolumePrice,
+        borderColor: "#4A5568",
+        backgroundColor: "white",
+        borderWidth: "1px",
+        borderRadius: "20px",
       },
     ],
   };
 
-  // return <Line options={options} data={graphData} />;
-}
+  return <Line options={options} data={items} />;
+};
+
+export default VolumeChart;
+// return <Line options={options} data={graphData} />;

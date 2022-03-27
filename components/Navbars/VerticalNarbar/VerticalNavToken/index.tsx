@@ -79,7 +79,8 @@ export default function VerticalNarbar() {
       bg={useColorModeValue("white", "#243036")}
       borderColor={useColorModeValue("inherit", "#243036")}
       borderRightWidth="1px"
-      w="60"
+      borderRadius="xl"
+      w="45"
       {...props}
     >
       <Flex px="4" py="5" align="center">
@@ -163,15 +164,13 @@ export default function VerticalNarbar() {
         </DrawerContent>
       </Drawer>
       <Box ml={{ base: 0, md: 60 }} transition=".3s ease">
-        <Flex align="center" justify="space-between" px="4" h="14">
-          <IconButton
-            aria-label="Menu"
-            display={{ base: "inline-flex", md: "none" }}
-            onClick={sidebar.onOpen}
-            icon={<FiMenu />}
-            size="sm"
-          />
-        </Flex>
+        <IconButton
+          aria-label="Menu"
+          display={{ base: "inline-flex", md: "none" }}
+          onClick={sidebar.onOpen}
+          icon={<FiMenu />}
+          size="sm"
+        />
 
         <Box as="main">
           <Tokens />

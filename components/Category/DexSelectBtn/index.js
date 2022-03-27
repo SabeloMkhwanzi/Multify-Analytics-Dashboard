@@ -44,6 +44,7 @@ export default function SelectButton(props) {
       borderColor={useColorModeValue("inherit", "gray.600")}
       borderRightWidth="1px"
       w="55"
+      borderRadius="xl"
     >
       <Flex justifyContent="flex-end" mx={2} mt={5}>
         <form onSubmit={props.getApi}>

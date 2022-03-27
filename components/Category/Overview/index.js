@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Box,
   chakra,
@@ -9,43 +9,56 @@ import {
   Badge,
 } from "@chakra-ui/react";
 import millify from "millify";
+import moment from "moment";
 
 import DexSelectBtn from "../DexSelectBtn";
+import { LiquidityChart, VolumeChart } from "../..";
+import DexTicker from "../DexTicker";
 
 //API Key
 const apikey = "ckey_4e73d56514984838ab3206fbaf4";
+//const API_KEY = process.env['REACT_APP_COVALENT_API']
 
-class Overview extends Component {
-  state = {
-    items: [],
-  };
+function Overview() {
+  const [items, setItems] = useState([]);
+  const [graphData, setGraph] = useState([]);
+  const [weiData, setWei] = useState([]);
+  const [graphLoader, setGraphLoader] = useState(true);
+  const [graphErr, setErr] = useState(false);
+  const currentDay = moment().format("YYYY-MM-DD");
 
-  //xy=k is a generalized Uniswap-like endpoints for exchanges on various chains.
+  useEffect(() => {
+    items;
+    graphData;
+  }, []);
 
-  //Summary overview
-  //ecosystem chart data
-  //https://api.covalenthq.com/v1/1/xy=k/uniswap_v2/ecosystem/?quote-currency=USD&format=JSON&key=ckey_4e73d56514984838ab3206fbaf4
-  // health data
-  //https://api.covalenthq.com/v1/1/xy=k/uniswap_v2/health/?quote-currency=USD&format=JSON&key=ckey_4e73d56514984838ab3206fbaf4
-
-  getApi = async (e) => {
+  //handle Ecosystem data
+  const getApi = async (e) => {
     const chainId = e.target.elements.chainId.value;
     e.preventDefault();
     const dexName = e.target.elements.dexName.value;
     e.preventDefault();
 
-    const api_call = await fetch(
+    const response = await fetch(
       `https://api.covalenthq.com/v1/${chainId}/xy=k/${dexName}/ecosystem/?quote-currency=USD&format=JSON&key=${apikey}`
     );
-    const data = await api_call.json();
-    this.setState({ items: data.data.items });
-
-    console.log(this.state.items);
+    const data = await response.json();
+    setItems(data.data.items);
+    // setGraph(data.data.items);
+    setGraph(
+      data.data.items
+        .map((item) => ({
+          x: item.dt,
+          y: item.liquidity_quote,
+        }))
+        .reverse()
+    );
   };
-
-  render() {
-    return (
-      <>
+  console.log(items);
+  return (
+    <>
+      <DexTicker />
+      <Box justifyContent="center" mx="24">
         <Box>
           <Text
             ml={10}
@@ -72,9 +85,9 @@ class Overview extends Component {
           </Text>
         </Box>
 
-        <DexSelectBtn getApi={this.getApi} />
+        <DexSelectBtn getApi={getApi} />
 
-        {this.state.items.map((item) => (
+        {items.map((item) => (
           <SimpleGrid
             columns={[1, null, 4]}
             spacing={5}
@@ -111,7 +124,6 @@ class Overview extends Component {
                 </Text>
               </Box>
             </Box>
-
             <Box
               w="full"
               maxW="xs"
@@ -140,7 +152,6 @@ class Overview extends Component {
                 </Text>
               </Box>
             </Box>
-
             <Box
               w="full"
               maxW="xs"
@@ -172,18 +183,18 @@ class Overview extends Component {
           </SimpleGrid>
         ))}
 
-        {this.state.items.map((item) => (
+        {items.map((item) => (
           <HStack key={item.chain_id} mx={5}>
             <Box p="6">
               <Box d="flex" alignItems="baseline">
-                <Badge color="Blue.900" rounded="full" px="2" bg="#243036">
+                <Badge color="Blue.900" rounded="full" px="2" bg="#319795">
                   <Text color="white"> Dex Name</Text>
                 </Badge>
                 <Box
                   color="white"
                   fontWeight="semibold"
                   letterSpacing="wide"
-                  fontSize="lg"
+                  fontSize="md"
                   textTransform="uppercase"
                   ml="2"
                 >
@@ -194,14 +205,14 @@ class Overview extends Component {
 
             <Box p="6">
               <Box d="flex" alignItems="baseline">
-                <Badge color="Blue.900" rounded="full" px="2" bg="#243036">
+                <Badge color="Blue.900" rounded="full" px="2" bg="#319795">
                   <Text color="white">Price Quote</Text>
                 </Badge>
                 <Box
                   color="white"
                   fontWeight="semibold"
                   letterSpacing="wide"
-                  fontSize="lg"
+                  fontSize="md"
                   textTransform="uppercase"
                   ml="2"
                 >
@@ -213,8 +224,80 @@ class Overview extends Component {
             </Box>
           </HStack>
         ))}
-      </>
-    );
-  }
+        <SimpleGrid alignContent="center" columns={[2, null, 1]} mt={15}>
+          <Box>
+            <Text
+              ml={10}
+              right={2}
+              letterSpacing={1}
+              fontSize="lg"
+              fontWeight="thin"
+              decoration="lightblue"
+              textTransform="uppercase"
+            >
+              Liquidity Chart
+            </Text>
+          </Box>
+          <Box
+            my={5}
+            w="full"
+            maxW="md"
+            mx={10}
+            px={5}
+            ps={5}
+            py={3}
+            bg="#243036"
+            shadow="xl"
+            rounded="md "
+            borderRadius="lg"
+            borderWidth={1}
+            borderColor="gray.600"
+            h="400px"
+            minW="72%"
+          >
+            <LiquidityChart liquidPrice={graphData} />
+          </Box>
+          <Text
+            ml={10}
+            right={2}
+            letterSpacing={1}
+            fontSize="lg"
+            fontWeight="thin"
+            decoration="lightblue"
+            textTransform="uppercase"
+          >
+            Volume Chart
+          </Text>
+          <Box
+            my={5}
+            w="full"
+            mx={10}
+            maxW="md"
+            px={5}
+            ps={5}
+            py={3}
+            bg="#243036"
+            shadow="xl"
+            rounded="md "
+            borderRadius="lg"
+            borderWidth={1}
+            borderColor="gray.600"
+            h="400px"
+            minW="72%"
+          >
+            <VolumeChart liquidPrice={graphData} />
+          </Box>
+        </SimpleGrid>
+      </Box>
+    </>
+  );
 }
 export default Overview;
+
+//xy=k is a generalized Uniswap-like endpoints for exchanges on various chains.
+
+//Summary overview
+//ecosystem chart data
+//https://api.covalenthq.com/v1/1/xy=k/uniswap_v2/ecosystem/?quote-currency=USD&format=JSON&key=ckey_4e73d56514984838ab3206fbaf4
+// health data
+//https://api.covalenthq.com/v1/1/xy=k/uniswap_v2/health/?quote-currency=USD&format=JSON&key=ckey_4e73d56514984838ab3206fbaf4
