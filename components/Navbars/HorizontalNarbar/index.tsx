@@ -104,7 +104,7 @@ export default function HorizontalNarbar() {
                     </Text>
                   </Link>
                 </Button>
-                <Button
+                {/* <Button
                   borderRadius="2xl"
                   w="full"
                   variant="ghost"
@@ -115,7 +115,7 @@ export default function HorizontalNarbar() {
                       Bridge
                     </Text>
                   </Link>
-                </Button>
+                </Button> */}
                 <Button
                   borderRadius="2xl"
                   w="full"
@@ -169,7 +169,7 @@ export default function HorizontalNarbar() {
                   </Text>
                 </Link>
               </Button>
-              <Button
+              {/* <Button
                 bgColor="gray.900"
                 borderRadius="xl"
                 variant="ghost"
@@ -181,7 +181,7 @@ export default function HorizontalNarbar() {
                     Bridge
                   </Text>
                 </Link>
-              </Button>
+              </Button> */}
               <Button
                 bgColor="gray.900"
                 borderRadius="xl"

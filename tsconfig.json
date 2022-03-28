@@ -20,7 +20,7 @@
     "**/*.ts",
     "**/*.tsx",
     "components/Navbars/VerticalNarbar/VerticalNavToken/index.tsx",
-    "components/DefiInterfaces/SwapInterface/index.tsx",
+    "components/DefiInterfaces/DexSwapLayout/DexTokens/index.tsx",
     "pages/swapinterface.tsx",
     "components/DefiInterfaces/WalletInterface/index.js",
     "components/DefiInterfaces/WalletInterface/SelectButton.tsx",
@@ -36,7 +36,9 @@
     "components/Category/Pools/PoolTable/index.js",
     "components/Graphs/LiquidityChart/index.js",
     "components/Graphs/VolumeChart/index.js",
-    "components/DefiInterfaces/WalletInterface/Balances/index.js"
+    "components/DefiInterfaces/WalletInterface/Balances/index.js",
+    "components/DefiInterfaces/SwapInterface/DexTokens/index.js",
+    "components/DefiInterfaces/DexSwapLayout/SwapInterface/index.tsx"
   ],
   "exclude": ["node_modules"]
 }

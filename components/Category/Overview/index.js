@@ -48,7 +48,7 @@ function Overview() {
     setGraph(
       data.data.items
         .map((item) => ({
-          x: item.dt,
+          x: data.dt,
           y: item.liquidity_quote,
         }))
         .reverse()
@@ -84,9 +84,8 @@ function Overview() {
             Overview
           </Text>
         </Box>
-
+        {console.log(items.dex_name)}
         <DexSelectBtn getApi={getApi} />
-
         {items.map((item) => (
           <SimpleGrid
             columns={[1, null, 4]}
@@ -182,7 +181,6 @@ function Overview() {
             </Box>
           </SimpleGrid>
         ))}
-
         {items.map((item) => (
           <HStack key={item.chain_id} mx={5}>
             <Box p="6">

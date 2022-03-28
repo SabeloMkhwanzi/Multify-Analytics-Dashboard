@@ -4,7 +4,6 @@ import { Box, Flex, Text } from "@chakra-ui/react";
 import SelectButton from "./SelectButton";
 import Balances from "./Balances";
 import Transaction from "./Transaction";
-import Portfolio from "./Portfolio";
 
 //const balancesEndpoint = "balances_v2";
 const apikey = "ckey_4e73d56514984838ab3206fbaf4";
@@ -83,22 +82,6 @@ function WalletInterface() {
         </Text>
         <Balances getBalance={items} />
       </Box>
-
-      {/* <Box mx="10%" mt={10}>
-        <Text
-          ml={10}
-          right={2}
-          color="gray.400"
-          letterSpacing={1}
-          fontSize="md"
-          fontWeight="semibold"
-          decoration="lightblue"
-          textTransform="uppercase"
-        >
-          Portfolio Overview
-        </Text>
-        <Portfolio getPortfolio={items} />
-      </Box> */}
 
       <Box mx="10%" mt={10}>
         <Text

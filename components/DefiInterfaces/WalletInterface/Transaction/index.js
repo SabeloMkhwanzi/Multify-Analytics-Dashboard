@@ -48,7 +48,7 @@ export default function Transaction({ getTransaction }) {
               w={{ base: 120, md: "full" }}
               textTransform="uppercase"
               bg="#303E46"
-              color={"gray.500"}
+              color={"gray.100"}
               py={{ base: 1, md: 4 }}
               px={{ base: 2, md: 10 }}
               fontSize="md"

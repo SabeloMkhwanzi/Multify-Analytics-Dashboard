@@ -13,7 +13,6 @@ import {
 import { useForm } from "react-hook-form";
 
 export default function SelectButton({ getWallet }) {
-  //const [value, setValue] = React.useState("1");
   useForm();
 
   return (
@@ -93,14 +92,14 @@ export default function SelectButton({ getWallet }) {
             >
               Balances
             </Radio>
-            <Radio
+            {/* <Radio
               size="md"
               name="walletsStatus"
               colorScheme="green"
               value="portfolio_v2"
             >
               Portfolio
-            </Radio>
+            </Radio> */}
             <Radio
               size="md"
               colorScheme="orange"
@@ -115,20 +114,3 @@ export default function SelectButton({ getWallet }) {
     </form>
   );
 }
-
-// {
-//   /* <form onSubmit={props.getWallet}>
-//       <input type="number" name="chainId" />
-//       <button>Search</button>
-//     </form> */
-// }
-
-//     {/* <Select
-//   maxWidth={500}
-//   placeholder="Select Network"
-//   onChange={props.getData}
-// >
-//   <option value="1">Ethereum</option>
-//   <option value="137">Polygon</option>
-//   <option value="43114">Avalanche</option>
-// </Select>*}

@@ -1,13 +1,14 @@
 import React from "react";
 import { HorizontalNarbar } from "../components";
-import SwapInterface from "../components/DefiInterfaces/SwapInterface";
+import DexSwapLayout from "../components/DefiInterfaces/DexSwapLayout";
 import styles from "../styles/Home.module.css";
+import { Box } from "@chakra-ui/react";
 
 export default function swapinterface() {
   return (
-    <div className={styles.container}>
+    <Box className={styles.container} bgColor="gray.800" minHeight="100vh">
       <HorizontalNarbar />
-      <SwapInterface />
-    </div>
+      <DexSwapLayout />
+    </Box>
   );
 }

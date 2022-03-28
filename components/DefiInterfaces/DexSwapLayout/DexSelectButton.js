@@ -10,46 +10,46 @@ import {
   Box,
   Text,
   useColorModeValue,
-  Divider,
 } from "@chakra-ui/react";
 
 import { useForm } from "react-hook-form";
 
-export default function SelectButton(props) {
-  const ref = useRef(null);
+export default function SelectButton({ getChain }) {
+  // const ref = useRef(null);
+  // const myfunc = () => {
+  //   console.log("I was activated 1 seconds later");
+  // };
+
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     ref.current.click();
+  //   }, 1);
+  // }, []);
+
   useForm();
-
-  const myfunc = () => {
-    console.log("I was activated 1 seconds later");
-  };
-
-  useEffect(() => {
-    setTimeout(() => {
-      ref.current.click();
-    }, 1000);
-  }, []);
 
   return (
     <Box
       as="nav"
       pos="fixed"
       top="0"
+      mt={24}
       right={0}
       zIndex="sticky"
-      h="full"
+      maxH="550"
       pb="10"
       overflowX="hidden"
       overflowY="auto"
       bg={useColorModeValue("white", "#243036")}
       borderColor={useColorModeValue("inherit", "gray.600")}
       borderRightWidth="1px"
-      w="55"
+      w="60"
       borderRadius="xl"
     >
-      <Flex justifyContent="flex-end" mx={2} mt={5}>
-        <form onSubmit={props.getApi}>
+      <Stack direction="column">
+        <form onSubmit={getChain}>
           <FormControl>
-            <Stack spacing={1} direction="row">
+            <Stack mt={2} mx={2} spacing={1} direction="row">
               <Select
                 textAlign="center"
                 maxW={118}
@@ -81,18 +81,19 @@ export default function SelectButton(props) {
                 </option>
               </Select>
               <Button
-                ref={ref}
-                onClick={myfunc}
                 borderRadius="lg"
                 right="0"
                 bgColor="#00AF91"
                 type="submit"
                 textTransform="uppercase"
+                // ref={ref}
+                // onClick={myfunc}
               >
                 analyse
               </Button>
             </Stack>
           </FormControl>
+
           <Flex justifyContent="space-around">
             <RadioGroup
               my={5}
@@ -241,15 +242,7 @@ export default function SelectButton(props) {
             </RadioGroup>
           </Flex>
         </form>
-      </Flex>
-      <Box
-        borderColor="gray.600"
-        alignContent="space-between"
-        mx={6}
-        maxWidth={180}
-      >
-        <Divider />
-      </Box>
+      </Stack>
     </Box>
   );
 }

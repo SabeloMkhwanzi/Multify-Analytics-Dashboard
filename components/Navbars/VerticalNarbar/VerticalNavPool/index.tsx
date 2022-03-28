@@ -135,11 +135,11 @@ export default function VerticalNarbar() {
             <Text>Swap</Text>
           </Link>
         </NavItem>
-        <NavItem icon={GiSuspensionBridge}>
+        {/* <NavItem icon={GiSuspensionBridge}>
           <Link href="/bridgeinterface">
             <Text>Bridge</Text>
           </Link>
-        </NavItem>
+        </NavItem> */}
       </Flex>
       <DarkModeButton />
       <SocialMediaButton />
