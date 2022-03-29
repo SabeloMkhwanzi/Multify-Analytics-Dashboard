@@ -20,8 +20,6 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-//import { Logo } from "@choc-ui/logo";
-
 import { GiWallet, GiSuspensionBridge } from "react-icons/gi";
 
 import { RiExchangeDollarFill } from "react-icons/ri";

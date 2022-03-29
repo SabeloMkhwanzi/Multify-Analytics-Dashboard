@@ -32,4 +32,36 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
 # Multify-Analytics-Dashboard
+
+## 1. Ticker Component: Usage endpoint
+
+`xy=k is a generalized Uniswap-like endpoints for exchanges on various chains. supported DEXes `https://api.covalenthq.com/v1/xy=k/supported_dexes/?quote-currency=USD&format=JSON&key=${API_KEY}`
+`
+
+## 2. Summary overview ecosystem chart data
+
+`xy=k is a generalized Uniswap-like endpoints for exchanges on various chains.
+
+Summary overview
+ecosystem chart data
+`https://api.covalenthq.com/v1/${chainId}/xy=k/${dexName}/ecosystem/?quote-currency=USD&format=JSON&key=${API_KEY}`
+health data
+https://api.covalenthq.com/v1/1/xy=k/uniswap_v2/health/?quote-currency=USD&format=JSON&key=ckey_4e73d56514984838ab3206fbaf4
+`
+
+## 3. Pools Component: Usage Endpoint
+
+` //Pools endpoint xy=k //https://api.covalenthq.com/v1/${chainId}/xy=k/${dexName}/pools/?quote-currency=USD&format=JSON&key=${apikey}`
+
+## 4. Token Component: Usage Endpoint
+
+` xy=k is a generalized Uniswap-like endpoints for exchanges on various chains.
+
+Pools endpoint xy=k
+https://api.covalenthq.com/v1/${chainId}/xy=k/${dexName}/tokens/?quote-currency=USD&format=JSON&key=${apikey}`
+
+## 5. Get Balance, Transactions: Usage Endpoint
+
+`https: //api.covalenthq.com/v1/chainId/address/address/balances_v2/ https://api.covalenthq.com/v1/chainId/address/address/transactions_v2/`

@@ -15,7 +15,7 @@ import {
   Image,
 } from "@chakra-ui/react";
 
-import { GiWallet, GiSuspensionBridge } from "react-icons/gi";
+import { GiWallet } from "react-icons/gi";
 import { FiMenu } from "react-icons/fi";
 import { GiTwoCoins } from "react-icons/gi";
 import { RiHandCoinFill, RiExchangeDollarFill } from "react-icons/ri";
@@ -23,8 +23,6 @@ import { BiAnalyse } from "react-icons/bi";
 import Link from "next/link";
 
 import { SocialMediaButton, DarkModeButton, Pools } from "../../..";
-
-//import { Logo } from "@choc-ui/logo";
 
 export default function VerticalNarbar() {
   const sidebar = useDisclosure();

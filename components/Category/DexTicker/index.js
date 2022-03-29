@@ -20,10 +20,6 @@ function DexTicker() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  //xy=k is a generalized Uniswap-like endpoints for exchanges on various chains.
-  // supported DEXes
-  //https://api.covalenthq.com/v1/xy=k/supported_dexes/?quote-currency=USD&format=JSON&key=ckey_4e73d56514984838ab3206fbaf4
-
   const getData = async () => {
     //Using fetch
     const response = await axios.get(

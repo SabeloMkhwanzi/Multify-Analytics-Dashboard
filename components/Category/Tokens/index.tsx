@@ -11,11 +11,6 @@ const API_KEY = "ckey_4e73d56514984838ab3206fbaf4";
 function Tokens() {
   const [items, setItems] = useState([]);
 
-  //xy=k is a generalized Uniswap-like endpoints for exchanges on various chains.
-
-  //Pools endpoint xy=k
-  //https://api.covalenthq.com/v1/${chainId}/xy=k/${dexName}/tokens/?quote-currency=USD&format=JSON&key=${apikey}
-
   useEffect(() => {
     items;
     // eslint-disable-next-line react-hooks/exhaustive-deps

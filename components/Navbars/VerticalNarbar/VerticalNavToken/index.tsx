@@ -24,8 +24,6 @@ import Link from "next/link";
 
 import { SocialMediaButton, DarkModeButton, Tokens } from "../../..";
 
-//import { Logo } from "@choc-ui/logo";
-
 export default function VerticalNarbar() {
   const sidebar = useDisclosure();
   const integrations = useDisclosure();
@@ -188,5 +186,3 @@ export default function VerticalNarbar() {
     </Box>
   );
 }
-
-//logomakr.com/app/83Pqqm

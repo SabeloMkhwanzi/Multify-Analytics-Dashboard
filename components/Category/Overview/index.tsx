@@ -325,11 +325,3 @@ function Overview() {
   );
 }
 export default Overview;
-
-//xy=k is a generalized Uniswap-like endpoints for exchanges on various chains.
-
-//Summary overview
-//ecosystem chart data
-//https://api.covalenthq.com/v1/1/xy=k/uniswap_v2/ecosystem/?quote-currency=USD&format=JSON&key=ckey_4e73d56514984838ab3206fbaf4
-// health data
-//https://api.covalenthq.com/v1/1/xy=k/uniswap_v2/health/?quote-currency=USD&format=JSON&key=ckey_4e73d56514984838ab3206fbaf4

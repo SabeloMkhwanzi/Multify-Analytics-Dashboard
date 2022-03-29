@@ -15,7 +15,7 @@ import {
   Image,
 } from "@chakra-ui/react";
 
-import { GiWallet, GiSuspensionBridge } from "react-icons/gi";
+import { GiWallet } from "react-icons/gi";
 import { FiMenu } from "react-icons/fi";
 import { GiTwoCoins } from "react-icons/gi";
 import { RiHandCoinFill, RiExchangeDollarFill } from "react-icons/ri";
@@ -25,8 +25,6 @@ import Link from "next/link";
 import { DarkModeButton, SocialMediaButton } from "../../..";
 import Overview from "../../../Category/Overview";
 
-//import { Logo } from "@choc-ui/logo";
-
 export default function VerticalNarbar() {
   const sidebar = useDisclosure();
   const integrations = useDisclosure();
@@ -34,7 +32,7 @@ export default function VerticalNarbar() {
   const BoxBgColor = useColorModeValue("gray.200", "#243036");
   const BoxBorderColor = useColorModeValue("gray.200", "gray.500");
 
-  const NavItem = (props) => {
+  const NavItem = (props: { [x: string]: any; icon: any; children: any }) => {
     const { icon, children, ...rest } = props;
 
     return (

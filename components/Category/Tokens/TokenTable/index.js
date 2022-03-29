@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  Table,
-  Tr,
-  Th,
-  Td,
-  Text,
-  useColorModeValue,
-  Progress,
-} from "@chakra-ui/react";
+import { Table, Tr, Th, Td, Text, useColorModeValue } from "@chakra-ui/react";
 import {
   TableBody,
   TableContainer,

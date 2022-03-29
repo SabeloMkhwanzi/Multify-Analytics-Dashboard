@@ -16,10 +16,6 @@ function DexSwapLayout() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  //https: //api.covalenthq.com/v1/1/address/0xF975206a46b4eD9f5F008AF9813B19bf083d94eE/balances_v2/?quote-currency=USD&format=JSON&nft=true&no-nft-fetch=false&key=ckey_4e73d56514984838ab3206fbaf4
-  // https://api.covalenthq.com/v1/1/address/0xF975206a46b4eD9f5F008AF9813B19bf083d94eE/portfolio_v2/?quote-currency=USD&format=JSON&key=ckey_4e73d56514984838ab3206fbaf4
-  // https://api.covalenthq.com/v1/1/address/0xF975206a46b4eD9f5F008AF9813B19bf083d94eE/transactions_v2/?quote-currency=USD&format=JSON&block-signed-at-asc=false&no-logs=false&key=ckey_4e73d56514984838ab3206fbaf4
-
   const getChain = async (e: {
     target: { elements: { chainId: { value: any }; dexName: { value: any } } };
     preventDefault: () => void;
