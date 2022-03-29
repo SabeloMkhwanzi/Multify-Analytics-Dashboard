@@ -18,6 +18,7 @@ export default function SelectButton({ getWallet }) {
   const ButtonColorMode = useColorModeValue("#319795", "#00AF91");
   const ButtonColorMode1 = useColorModeValue("gray.300", "#303E46");
   const ButtonBorderColorMode1 = useColorModeValue("gray.300", "gray.600");
+  const BorderRadioColorMode = useColorModeValue("gray.900", "gray.500 ");
   useForm();
 
   return (
@@ -33,6 +34,7 @@ export default function SelectButton({ getWallet }) {
             name="userAddress"
             textTransform="uppercase"
             placeholder="ACCOUNT ADDRESS 0x00f7.... OR ENS DOMAIN"
+            shadow="lg"
           />
 
           <Select
@@ -42,6 +44,7 @@ export default function SelectButton({ getWallet }) {
             name="chainId"
             type="number"
             bg={ButtonColorMode1}
+            shadow="lg"
           >
             <option name="chainId" value="1">
               Ethereum
@@ -71,12 +74,13 @@ export default function SelectButton({ getWallet }) {
             right="0"
             bgColor={ButtonColorMode}
             type="submit"
+            shadow="lg"
           >
             ANALYSE
           </Button>
         </Stack>
         <RadioGroup
-          borderColor="gray.500"
+          borderColor={BorderRadioColorMode}
           my={5}
           textAlign="left"
           maxW={150}

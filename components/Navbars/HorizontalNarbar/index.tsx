@@ -151,6 +151,7 @@ export default function HorizontalNarbar() {
                 variant="outline"
                 borderRadius="xl"
                 leftIcon={<RiExchangeDollarFill />}
+                shadow="lg"
                 size="sm"
               >
                 <Link href="/summary">
@@ -164,6 +165,7 @@ export default function HorizontalNarbar() {
                 borderRadius="xl"
                 variant="ghost"
                 leftIcon={<GiWallet />}
+                shadow="lg"
                 size="sm"
               >
                 <Link href="/walletanalyse">
@@ -177,6 +179,7 @@ export default function HorizontalNarbar() {
                 borderRadius="xl"
                 variant="ghost"
                 leftIcon={<RiExchangeDollarFill />}
+                shadow="lg"
                 size="sm"
               >
                 <Link href="/swapinterface">

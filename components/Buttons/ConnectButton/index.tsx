@@ -71,6 +71,7 @@ export default function WalletModel() {
             bgColor={ButtonColorMode}
             leftIcon={<GiWallet />}
             onClick={disconnect}
+            shadow="lg"
           >
             Disconnect
           </Button>
@@ -87,6 +88,7 @@ export default function WalletModel() {
         bgColor={ButtonColorMode}
         leftIcon={<GiWallet />}
         onClick={onOpen}
+        shadow="lg"
       >
         Connect
       </Button>

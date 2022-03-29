@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Flex, Text, useColorModeValue } from "@chakra-ui/react";
 
 import SelectButton from "./SelectButton";
 import Balances from "./Balances";
@@ -11,6 +11,7 @@ const apikey = "ckey_4e73d56514984838ab3206fbaf4";
 
 function WalletInterface() {
   const [items, setItems] = useState([]);
+  const TextColorMode1 = useColorModeValue("black", "gray.400");
 
   useEffect(() => {
     items;
@@ -71,7 +72,7 @@ function WalletInterface() {
         <Text
           ml={10}
           right={2}
-          color="gray.400"
+          color={TextColorMode1}
           letterSpacing={1}
           fontSize="md"
           fontWeight="semibold"
@@ -87,7 +88,7 @@ function WalletInterface() {
         <Text
           ml={10}
           right={2}
-          color="gray.400"
+          color={TextColorMode1}
           letterSpacing={1}
           fontSize="md"
           fontWeight="semibold"

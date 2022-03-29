@@ -14,9 +14,9 @@ import {
 import millify from "millify";
 
 export default function Balances({ getBalance }) {
-  const dataColor = useColorModeValue("white", "gray.800");
-  const bg = useColorModeValue("white", "gray.800");
-  const bg2 = useColorModeValue("gray.100", "gray.700");
+  const TextColorMode1 = useColorModeValue("gray.700", "white");
+  const BoxBgColor = useColorModeValue("gray.400", "#243036");
+  const BoxBgColor2 = useColorModeValue("gray.300", "#303E46");
 
   const formatCash = (n) => {
     if (n < 1e3) return n;
@@ -39,7 +39,7 @@ export default function Balances({ getBalance }) {
         <Stack
           direction={{ base: "column" }}
           w="full"
-          bg={{ md: "#243036" }}
+          bg={{ md: BoxBgColor }}
           shadow="lg"
           borderRadius={20}
         >
@@ -52,7 +52,7 @@ export default function Balances({ getBalance }) {
               columns={[1, null, 4]}
               w={{ base: 120, md: "full" }}
               textTransform="uppercase"
-              bg="#303E46"
+              bg={BoxBgColor2}
               color={"gray.100"}
               py={{ base: 1, md: 4 }}
               px={{ base: 2, md: 10 }}
@@ -84,12 +84,13 @@ export default function Balances({ getBalance }) {
                     name={item.contract_name}
                     src={item.logo_url}
                   />
-                  <Text>{item.contract_address}</Text>
+                  <Text color={TextColorMode1}>{item.contract_address}</Text>
                 </Stack>
                 <chakra.span
                   textOverflow="ellipsis"
                   overflow="hidden"
                   whiteSpace="nowrap"
+                  color={TextColorMode1}
                 >
                   {item.contract_ticker_symbol}
                 </chakra.span>
@@ -97,10 +98,12 @@ export default function Balances({ getBalance }) {
                   textOverflow="ellipsis"
                   overflow="hidden"
                   whiteSpace="nowrap"
+                  color={TextColorMode1}
                 >
                   {formatCash(item.balance)}
                 </chakra.span>
                 <chakra.span
+                  color={TextColorMode1}
                   textOverflow="ellipsis"
                   overflow="hidden"
                   whiteSpace="nowrap"

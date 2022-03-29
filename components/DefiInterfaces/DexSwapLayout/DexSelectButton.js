@@ -51,6 +51,7 @@ export default function SelectButton({ getChain }) {
       borderRightWidth="1px"
       w="60"
       borderRadius="xl"
+      shadow="lg"
     >
       <Stack direction="column">
         <form onSubmit={getChain}>
@@ -64,6 +65,7 @@ export default function SelectButton({ getChain }) {
                 borderWidth={1}
                 borderColor={ButtonBorderColorMode1}
                 bg={ButtonColorMode1}
+                shadow="lg"
               >
                 <option name="chainId" value="1">
                   Ethereum
@@ -93,6 +95,7 @@ export default function SelectButton({ getChain }) {
                 bgColor={ButtonColorMode}
                 type="submit"
                 textTransform="uppercase"
+                shadow="lg"
                 // ref={ref}
                 // onClick={myfunc}
               >

@@ -16,10 +16,8 @@ import millify from "millify";
 import moment from "moment";
 
 export default function Transaction({ getTransaction }) {
-  console.log(getTransaction);
-  const dataColor = useColorModeValue("white", "gray.800");
-  const bg = useColorModeValue("white", "gray.800");
-  const bg2 = useColorModeValue("gray.100", "gray.700");
+  const BoxBgColor = useColorModeValue("gray.400", "#243036");
+  const BoxBgColor2 = useColorModeValue("gray.300", "#303E46");
 
   const formatCash = (n) => {
     if (n < 1e3) return n;
@@ -55,7 +53,7 @@ export default function Transaction({ getTransaction }) {
               columns={[1, null, 4]}
               w={{ base: 120, md: "full" }}
               textTransform="uppercase"
-              bg="#303E46"
+              bg={BoxBgColor2}
               color={"gray.100"}
               py={{ base: 1, md: 4 }}
               px={{ base: 2, md: 10 }}
@@ -71,7 +69,6 @@ export default function Transaction({ getTransaction }) {
             {getTransaction.map((item) => (
               <SimpleGrid
                 spacingY={4}
-                borderRadius={20}
                 columns={[1, null, 4]}
                 w="full"
                 py={10}
@@ -80,6 +77,7 @@ export default function Transaction({ getTransaction }) {
                 fontSize="lg"
                 textAlign="center"
                 key={item.block_height}
+                bg={BoxBgColor}
               >
                 <Stack direction="row" borderRadius={20}>
                   <Avatar size="sm" name="T X" src="" />
@@ -102,10 +100,10 @@ export default function Transaction({ getTransaction }) {
                   whiteSpace="nowrap"
                 >
                   <VStack>
-                    <Text color="blue.300" fontSize="xs" isTruncated>
+                    <Text color="blue.500" fontSize="xs" isTruncated>
                       From:{item.from_address}
                     </Text>
-                    <Text color="red.300" fontSize="sm" isTruncated>
+                    <Text color="red.500" fontSize="sm" isTruncated>
                       To:{item.to_address}
                     </Text>
                   </VStack>
@@ -114,7 +112,7 @@ export default function Transaction({ getTransaction }) {
                   textOverflow="ellipsis"
                   overflow="hidden"
                   whiteSpace="nowrap"
-                  color="green.300"
+                  color="green.500"
                 >
                   ${formatCash(item.value)}
                 </chakra.span>

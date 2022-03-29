@@ -163,7 +163,7 @@ export default function VerticalNarbar() {
           decoration="lightblue"
           textTransform="uppercase"
         >
-          Investor`s Tool
+          made 🤍 by Sabelo
         </Text>
       </Flex>
     </Box>

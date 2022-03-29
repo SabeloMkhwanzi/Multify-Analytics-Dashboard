@@ -261,7 +261,7 @@ export default function SelectButton(props) {
         <Divider />
       </Box>
       <Flex mx="16" bottom={1} pos="fixed">
-        <Image width={120} src="/logo.png" alt="covalent logo" />
+        <Image shadow="xl" width={120} src="/logo.png" alt="covalent logo" />
       </Flex>
     </Box>
   );
