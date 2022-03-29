@@ -66,13 +66,19 @@ export default function SmallCentered() {
           align={{ base: "center", md: "center" }}
         >
           <Stack direction="row" spacing={6}>
-            <SocialButton label="Twitter" href="#">
+            <SocialButton
+              label="Twitter"
+              href="https://twitter.com/SabeloMkhwanaz"
+            >
               <FaTwitter />
             </SocialButton>
             <SocialButton label="Discord" href="#">
               <FaDiscord />
             </SocialButton>
-            <SocialButton label="Github" href="#">
+            <SocialButton
+              label="Github"
+              href="https://github.com/SabeloMkhwanzi/Multify-Analytics-Dashboard"
+            >
               <FaGithub />
             </SocialButton>
           </Stack>

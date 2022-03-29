@@ -96,6 +96,18 @@ export default function HorizontalNarbar() {
                   borderRadius="2xl"
                   w="full"
                   variant="ghost"
+                  leftIcon={<GiWallet />}
+                >
+                  <Link href="/walletanalyse">
+                    <Text textTransform="uppercase" letterSpacing={1}>
+                      Wallet Analytics
+                    </Text>
+                  </Link>
+                </Button>
+                <Button
+                  borderRadius="2xl"
+                  w="full"
+                  variant="ghost"
                   leftIcon={<RiExchangeDollarFill />}
                 >
                   <Link href="/swapinterface">
@@ -116,18 +128,6 @@ export default function HorizontalNarbar() {
                     </Text>
                   </Link>
                 </Button> */}
-                <Button
-                  borderRadius="2xl"
-                  w="full"
-                  variant="ghost"
-                  leftIcon={<GiWallet />}
-                >
-                  <Link href="/walletanalyse">
-                    <Text textTransform="uppercase" letterSpacing={1}>
-                      Wallet Analytics
-                    </Text>
-                  </Link>
-                </Button>
               </VStack>
             </Box>
             <chakra.a
@@ -160,6 +160,19 @@ export default function HorizontalNarbar() {
                 bgColor="gray.900"
                 borderRadius="xl"
                 variant="ghost"
+                leftIcon={<GiWallet />}
+                size="sm"
+              >
+                <Link href="/walletanalyse">
+                  <Text textTransform="uppercase" letterSpacing={1}>
+                    Wallet Analytics
+                  </Text>
+                </Link>
+              </Button>
+              <Button
+                bgColor="gray.900"
+                borderRadius="xl"
+                variant="ghost"
                 leftIcon={<RiExchangeDollarFill />}
                 size="sm"
               >
@@ -182,19 +195,6 @@ export default function HorizontalNarbar() {
                   </Text>
                 </Link>
               </Button> */}
-              <Button
-                bgColor="gray.900"
-                borderRadius="xl"
-                variant="ghost"
-                leftIcon={<GiWallet />}
-                size="sm"
-              >
-                <Link href="/walletanalyse">
-                  <Text textTransform="uppercase" letterSpacing={1}>
-                    Wallet Analytics
-                  </Text>
-                </Link>
-              </Button>
             </HStack>
           </HStack>
           <HStack

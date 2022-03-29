@@ -144,6 +144,19 @@ export default function VerticalNarbar() {
       </Flex>
       <DarkModeButton />
       <SocialMediaButton />
+      <Flex mx="10" bottom={10} pos="fixed">
+        <Text
+          mb={2}
+          color={"gray.400"}
+          letterSpacing={0.5}
+          fontSize="xs"
+          fontWeight="thin"
+          decoration="lightblue"
+          textTransform="uppercase"
+        >
+          Investor`s Tool
+        </Text>
+      </Flex>
     </Box>
   );
 
