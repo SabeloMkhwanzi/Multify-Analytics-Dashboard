@@ -14,7 +14,8 @@ export default function SwapInterface() {
   const [ethereum, setEthereum] = useState();
 
   // Infura endpoint
-  const jsonRpcEndpoint = process.env.REACT_APP_RPC_ENDPOINT;
+  //const jsonRpcEndpoint = process.env.REACT_APP_RPC_ENDPOINT;
+  const jsonRpcEndpoint = "3ef17ef5bf7340ab9d97f938b3c4019c";
 
   useEffect(() => {
     setEthereum(window.ethereum);
