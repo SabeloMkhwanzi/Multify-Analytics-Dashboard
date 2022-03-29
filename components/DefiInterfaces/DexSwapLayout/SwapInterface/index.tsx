@@ -8,9 +8,8 @@ declare var window: any;
 //Dex Color mode
 let darkMode = true;
 
-export default function SwapInterface({ tokenListData }) {
+export default function SwapInterface() {
   // Web3 provider
-  console.log(tokenListData);
 
   const [ethereum, setEthereum] = useState();
 

@@ -26,7 +26,7 @@ function Overview() {
   const TextColorMode1 = useColorModeValue("gray.600", "white");
   const BoxBorderColor = useColorModeValue("gray.200", "gray.500");
 
-  const formatCash = (n) => {
+  const formatCash = (n: number) => {
     if (n < 1e3) return n;
     if (n >= 1e3 && n < 1e6) return +(n / 1e3).toFixed(1);
     if (n >= 1e6 && n < 1e9) return +(n / 1e6).toFixed(1);
@@ -38,10 +38,14 @@ function Overview() {
     items;
     liquidData;
     VolumeData;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   //handle Ecosystem data
-  const getApi = async (e) => {
+  const getApi = async (e: {
+    target: { elements: { chainId: { value: any }; dexName: { value: any } } };
+    preventDefault: () => void;
+  }) => {
     const chainId = e.target.elements.chainId.value;
     e.preventDefault();
     const dexName = e.target.elements.dexName.value;
@@ -52,10 +56,9 @@ function Overview() {
     );
     const data = await response.json();
     setItems(data.data.items);
-    // setGraph(data.data.items);
     setLiquidGraph(
       data.data.items[0].liquidity_chart_7d
-        .map((item) => ({
+        .map((item: { dt: string; liquidity_quote: any }) => ({
           x: moment().format(item.dt),
           y: formatCash(item.liquidity_quote),
         }))
@@ -63,7 +66,7 @@ function Overview() {
     );
     setVolumeGraph(
       data.data.items[0].volume_chart_7d
-        .map((item) => ({
+        .map((item: { dt: string; volume_quote: any }) => ({
           x: moment().format(item.dt),
           y: formatCash(item.volume_quote),
         }))
@@ -71,7 +74,6 @@ function Overview() {
     );
   };
 
-  console.log(process.env);
   return (
     <>
       <DexTicker />
@@ -102,6 +104,7 @@ function Overview() {
           </Text>
         </Box>
         <DexSelectBtn getApi={getApi} />
+
         {items.map((item) => (
           <SimpleGrid
             columns={[1, null, 4]}

@@ -49,11 +49,7 @@ export default function SmallCentered() {
       bg={useColorModeValue("white", "gray.800")}
       color={useColorModeValue("gray.700", "gray.200")}
     >
-      <Box
-      // borderTopWidth={1}
-      // borderStyle={"solid"}
-      // borderColor={useColorModeValue("purple.200", "purple.700")}
-      >
+      <Box>
         <Container
           position="fixed"
           bottom="5rem"

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Box, Flex, Text, useColorModeValue } from "@chakra-ui/react";
+import { Box, Text, useColorModeValue } from "@chakra-ui/react";
 
 import SelectButton from "./SelectButton";
 import Balances from "./Balances";
@@ -14,6 +14,7 @@ function WalletInterface() {
 
   useEffect(() => {
     items;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   //https: //api.covalenthq.com/v1/1/address/0xF975206a46b4eD9f5F008AF9813B19bf083d94eE/balances_v2/?quote-currency=USD&format=JSON&nft=true&no-nft-fetch=false&key=ckey_4e73d56514984838ab3206fbaf4

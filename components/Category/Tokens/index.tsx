@@ -18,9 +18,13 @@ function Tokens() {
 
   useEffect(() => {
     items;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const getApi = async (e) => {
+  const getApi = async (e: {
+    target: { elements: { chainId: { value: any }; dexName: { value: any } } };
+    preventDefault: () => void;
+  }) => {
     const chainId = e.target.elements.chainId.value;
     e.preventDefault();
     const dexName = e.target.elements.dexName.value;

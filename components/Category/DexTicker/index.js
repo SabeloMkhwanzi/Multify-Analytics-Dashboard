@@ -17,6 +17,7 @@ function DexTicker() {
 
   useEffect(() => {
     getData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   //xy=k is a generalized Uniswap-like endpoints for exchanges on various chains.

@@ -13,12 +13,16 @@ function Pools() {
 
   useEffect(() => {
     items;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   //Pools endpoint xy=k
   //https://api.covalenthq.com/v1/${chainId}/xy=k/${dexName}/pools/?quote-currency=USD&format=JSON&key=${apikey}
 
-  const getApi = async (e) => {
+  const getApi = async (e: {
+    target: { elements: { chainId: { value: any }; dexName: { value: any } } };
+    preventDefault: () => void;
+  }) => {
     const chainId = e.target.elements.chainId.value;
     e.preventDefault();
     const dexName = e.target.elements.dexName.value;
