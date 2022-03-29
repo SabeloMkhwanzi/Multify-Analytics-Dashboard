@@ -156,7 +156,7 @@ export default function VerticalNarbar() {
       <Flex mx="10" bottom={10} pos="fixed">
         <Text
           mb={2}
-          color={"gray.400"}
+          color={useColorModeValue("green.400", "gray.400")}
           letterSpacing={0.5}
           fontSize="xs"
           fontWeight="thin"
