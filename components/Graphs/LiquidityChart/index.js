@@ -68,4 +68,3 @@ const LiquidityChart = ({ liquid }) => {
 };
 
 export default LiquidityChart;
-// return <Line options={options} data={graphData} />;

@@ -23,8 +23,6 @@ function Overview() {
   const [items, setItems] = useState([]);
   const [liquidData, setLiquidGraph] = useState([]);
   const [VolumeData, setVolumeGraph] = useState([]);
-  const [graphLoader, setGraphLoader] = useState(true);
-  const [graphErr, setErr] = useState(false);
   const BoxBgColor = useColorModeValue("gray.200", "#243036");
   const TextColorMode = useColorModeValue("gray.500", "gray.400");
   const TextColorMode1 = useColorModeValue("gray.600", "white");
@@ -104,7 +102,6 @@ function Overview() {
             Overview
           </Text>
         </Box>
-        {console.log(items.dex_name)}
         <DexSelectBtn getApi={getApi} />
         {items.map((item) => (
           <SimpleGrid

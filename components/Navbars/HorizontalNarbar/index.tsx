@@ -209,7 +209,6 @@ export default function HorizontalNarbar() {
             alignItems="center"
           >
             <ConnectButton />
-            {/* Button Here */}
             <Switch
               position="fixed"
               top="1.5rem"

@@ -43,7 +43,7 @@ function DexSwapLayout() {
         }))
         .reverse()
     );
-    console.log(items);
+    // console.log(items);
   };
 
   return (

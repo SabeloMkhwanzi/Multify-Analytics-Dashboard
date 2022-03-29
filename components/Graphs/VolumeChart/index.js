@@ -68,4 +68,3 @@ const VolumeChart = ({ Volume }) => {
 };
 
 export default VolumeChart;
-// return <Line options={options} data={graphData} />;
