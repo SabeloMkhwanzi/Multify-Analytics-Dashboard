@@ -2,9 +2,7 @@ import React from "react";
 import { Chart as ChartJS } from "chart.js/auto";
 import { Line } from "react-chartjs-2";
 
-const LiquidityChart = ({ liquidPrice }) => {
-  console.log(liquidPrice);
-
+const LiquidityChart = ({ liquid }) => {
   const options = {
     responsive: true,
     maintainAspectRatio: false,
@@ -12,7 +10,7 @@ const LiquidityChart = ({ liquidPrice }) => {
       legend: {
         position: "top",
         labels: {
-          color: "#00AF91",
+          color: "white",
           font: {
             size: 14,
           },
@@ -26,7 +24,7 @@ const LiquidityChart = ({ liquidPrice }) => {
         type: "linear",
         position: "left",
         ticks: {
-          color: "#00AF91",
+          color: "#FF4C8B",
           callback: function (value, index, values) {
             if (parseInt(value) >= 1000) {
               return (
@@ -42,41 +40,31 @@ const LiquidityChart = ({ liquidPrice }) => {
         type: "linear",
         position: "right",
         ticks: {
-          color: "#3c9b6f",
+          color: "#00AF91",
           max: 1,
           min: 0,
         },
       },
       x: {
         ticks: {
-          color: "#00AF91 ",
+          color: "white",
         },
       },
     },
   };
-  const items = {
+  const liquidData = {
     datasets: [
       {
         label: "Liquidity Quote 7d ($) ",
         yAxisID: "A",
-        data: liquidPrice,
-        borderColor: "#4A5568",
+        data: liquid,
+        borderColor: "#00AF91",
         backgroundColor: "#00AF91",
-        borderWidth: "1px",
-      },
-      {
-        label: "Liquidity Quote 30d ($) ",
-        yAxisID: "A",
-        data: liquidPrice,
-        borderColor: "#4A5568",
-        backgroundColor: "white",
-        borderWidth: "1px",
-        borderRadius: "20px",
       },
     ],
   };
 
-  return <Line options={options} data={items} />;
+  return <Line options={options} data={liquidData} />;
 };
 
 export default LiquidityChart;

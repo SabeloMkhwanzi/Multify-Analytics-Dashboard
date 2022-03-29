@@ -2,9 +2,7 @@ import React from "react";
 import { Chart as ChartJS } from "chart.js/auto";
 import { Line } from "react-chartjs-2";
 
-const VolumeChart = ({ VolumePrice }) => {
-  console.log(VolumePrice);
-
+const VolumeChart = ({ Volume }) => {
   const options = {
     responsive: true,
     maintainAspectRatio: false,
@@ -12,7 +10,7 @@ const VolumeChart = ({ VolumePrice }) => {
       legend: {
         position: "top",
         labels: {
-          color: "#00AF91",
+          color: "white",
           font: {
             size: 14,
           },
@@ -26,7 +24,7 @@ const VolumeChart = ({ VolumePrice }) => {
         type: "linear",
         position: "left",
         ticks: {
-          color: "#00AF91",
+          color: "#FF4C8B",
           callback: function (value, index, values) {
             if (parseInt(value) >= 1000) {
               return (
@@ -42,41 +40,31 @@ const VolumeChart = ({ VolumePrice }) => {
         type: "linear",
         position: "right",
         ticks: {
-          color: "#3c9b6f",
+          color: "#FAEEE7",
           max: 1,
           min: 0,
         },
       },
       x: {
         ticks: {
-          color: "#00AF91 ",
+          color: "white",
         },
       },
     },
   };
-  const items = {
+  const VolumeData = {
     datasets: [
       {
-        label: "Volume Quote 7d ($) ",
+        label: "Volume Quote 7d($) ",
         yAxisID: "A",
-        data: VolumePrice,
-        borderColor: "#4A5568",
-        backgroundColor: "#00AF91",
-        borderWidth: "1px",
-      },
-      {
-        label: "Volume Quote 30d ($) ",
-        yAxisID: "A",
-        data: VolumePrice,
-        borderColor: "#4A5568",
-        backgroundColor: "white",
-        borderWidth: "1px",
-        borderRadius: "20px",
+        data: Volume,
+        borderColor: "#FAEEE7",
+        backgroundColor: "#FAEEE7",
       },
     ],
   };
 
-  return <Line options={options} data={items} />;
+  return <Line options={options} data={VolumeData} />;
 };
 
 export default VolumeChart;

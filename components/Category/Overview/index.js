@@ -21,15 +21,28 @@ const apikey = "ckey_4e73d56514984838ab3206fbaf4";
 
 function Overview() {
   const [items, setItems] = useState([]);
-  const [graphData, setGraph] = useState([]);
-  const [weiData, setWei] = useState([]);
+  const [liquidData, setLiquidGraph] = useState([]);
+  const [VolumeData, setVolumeGraph] = useState([]);
   const [graphLoader, setGraphLoader] = useState(true);
   const [graphErr, setErr] = useState(false);
-  const currentDay = moment().format("YYYY-MM-DD");
+  // const currentDay = moment().format("YYYY-MM-DD");
+
+  const formatCash = (n) => {
+    if (n < 1e3) return n;
+    if (n >= 1e3 && n < 1e6) return +(n / 1e3).toFixed(1);
+    if (n >= 1e6 && n < 1e9) return +(n / 1e6).toFixed(1);
+    if (n >= 1e9 && n < 1e12) return +(n / 1e9).toFixed(1);
+    if (n >= 1e12) return +(n / 1e12).toFixed(1);
+  };
+
+  //const m = moment(new Date("2019/06/01 14:04:03"));
+
+  //let timestamp = Number(new Date());
 
   useEffect(() => {
     items;
-    graphData;
+    liquidData;
+    VolumeData;
   }, []);
 
   //handle Ecosystem data
@@ -45,16 +58,24 @@ function Overview() {
     const data = await response.json();
     setItems(data.data.items);
     // setGraph(data.data.items);
-    setGraph(
-      data.data.items
+    setLiquidGraph(
+      data.data.items[0].liquidity_chart_7d
         .map((item) => ({
-          x: data.dt,
-          y: item.liquidity_quote,
+          x: moment().format(item.dt),
+          y: formatCash(item.liquidity_quote),
+        }))
+        .reverse()
+    );
+    setVolumeGraph(
+      data.data.items[0].volume_chart_7d
+        .map((item) => ({
+          x: moment().format(item.dt),
+          y: formatCash(item.volume_quote),
         }))
         .reverse()
     );
   };
-  console.log(items);
+
   return (
     <>
       <DexTicker />
@@ -253,7 +274,7 @@ function Overview() {
             h="400px"
             minW="72%"
           >
-            <LiquidityChart liquidPrice={graphData} />
+            <LiquidityChart liquid={liquidData} />
           </Box>
           <Text
             ml={10}
@@ -283,7 +304,7 @@ function Overview() {
             h="400px"
             minW="72%"
           >
-            <VolumeChart liquidPrice={graphData} />
+            <VolumeChart Volume={VolumeData} />
           </Box>
         </SimpleGrid>
       </Box>

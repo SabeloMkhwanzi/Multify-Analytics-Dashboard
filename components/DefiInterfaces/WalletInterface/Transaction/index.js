@@ -13,13 +13,21 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import millify from "millify";
-//import Moment from "react-moment";
+import moment from "moment";
 
 export default function Transaction({ getTransaction }) {
   console.log(getTransaction);
   const dataColor = useColorModeValue("white", "gray.800");
   const bg = useColorModeValue("white", "gray.800");
   const bg2 = useColorModeValue("gray.100", "gray.700");
+
+  const formatCash = (n) => {
+    if (n < 1e3) return n;
+    if (n >= 1e3 && n < 1e6) return +(n / 1e3).toFixed(1);
+    if (n >= 1e6 && n < 1e9) return +(n / 1e6).toFixed(1);
+    if (n >= 1e9 && n < 1e12) return +(n / 1e9).toFixed(1);
+    if (n >= 1e12) return +(n / 1e12).toFixed(1);
+  };
 
   return (
     <>
@@ -84,9 +92,8 @@ export default function Transaction({ getTransaction }) {
                   overflow="hidden"
                   whiteSpace="nowrap"
                 >
-                  {/* <Moment parse="YYYY-MM-DD HH:mm"> */}
-                  {item.block_signed_at}
-                  {/* </Moment> */}
+                  {moment().format(item.block_signed_at)}
+
                   {item.block_height}
                 </chakra.span>
                 <chakra.span
@@ -95,10 +102,10 @@ export default function Transaction({ getTransaction }) {
                   whiteSpace="nowrap"
                 >
                   <VStack>
-                    <Text fontSize="xs" isTruncated>
+                    <Text color="blue.300" fontSize="xs" isTruncated>
                       From:{item.from_address}
                     </Text>
-                    <Text fontSize="xs" isTruncated>
+                    <Text color="red.300" fontSize="sm" isTruncated>
                       To:{item.to_address}
                     </Text>
                   </VStack>
@@ -107,8 +114,9 @@ export default function Transaction({ getTransaction }) {
                   textOverflow="ellipsis"
                   overflow="hidden"
                   whiteSpace="nowrap"
+                  color="green.300"
                 >
-                  ${item.value}
+                  ${formatCash(item.value)}
                 </chakra.span>
               </SimpleGrid>
             ))}

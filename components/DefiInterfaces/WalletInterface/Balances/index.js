@@ -97,7 +97,7 @@ export default function Balances({ getBalance }) {
                   overflow="hidden"
                   whiteSpace="nowrap"
                 >
-                  ${item.quote_rate}
+                  {/* ${item.quote_rate} */}
                 </chakra.span>
               </SimpleGrid>
             ))}
@@ -107,56 +107,4 @@ export default function Balances({ getBalance }) {
       </Flex>
     </>
   );
-}
-
-{
-  /* <Box
-        w="full"
-        maxW="xs"
-        mx={10}
-        px={5}
-        ps={5}
-        py={3}
-        bg="#243036"
-        shadow="xl"
-        rounded="md "
-        borderRadius="lg"
-        borderWidth={1}
-        borderColor="gray.600"
-      >
-        <Box>
-          <Stack direction="column">
-            <Text
-              fontSize="lg"
-              mt={2}
-              textAlign="center"
-              color="white"
-              as="samp"
-              fontWeight="bold"
-            >
-              {}
-            </Text>
-            <Text
-              fontSize="lg"
-              mt={2}
-              textAlign="center"
-              color="white"
-              as="samp"
-              fontWeight="bold"
-            >
-              {}
-            </Text>
-            <Text
-              fontSize="lg"
-              mt={2}
-              textAlign="center"
-              color="white"
-              as="samp"
-              fontWeight="bold"
-            >
-              {}
-            </Text>
-          </Stack>
-        </Box>
-      </Box> */
 }

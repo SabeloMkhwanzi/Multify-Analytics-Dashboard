@@ -11,6 +11,7 @@ import {
   Text,
   useColorModeValue,
   Divider,
+  Image,
 } from "@chakra-ui/react";
 
 import { useForm } from "react-hook-form";
@@ -57,6 +58,7 @@ export default function SelectButton(props) {
                 type="number"
                 borderWidth={1}
                 borderColor="gray.600"
+                bg="#303E46"
               >
                 <option name="chainId" value="1">
                   Ethereum
@@ -250,6 +252,9 @@ export default function SelectButton(props) {
       >
         <Divider />
       </Box>
+      <Flex>
+        <Image src="/logo.png" alt="" />
+      </Flex>
     </Box>
   );
 }
