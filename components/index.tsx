@@ -1,5 +1,3 @@
-export { default as AnalyseButton } from "./Buttons/AnalyseButton";
-export { default as ChainsButton } from "./Buttons/ChainsButton";
 export { default as ConnectButton } from "./Buttons/ConnectButton";
 export { default as DarkModeButton } from "./Buttons/DarkModeButton";
 export { default as SocialMediaButton } from "./Buttons/SocialMediaButton";
@@ -13,7 +11,6 @@ export { default as VerticalNarbar } from "./Navbars/VerticalNarbar/VerticalNavT
 export { default as SearchInput } from "./SearchInput";
 export { default as Tokens } from "./Category/Tokens";
 export { default as Pools } from "./Category/Pools";
-export { default as selectDropdown } from "./selectDropdown";
 export { default as VerticalNavPool } from "../components/Navbars/VerticalNarbar/VerticalNavPool";
 export { default as VerticalNavToken } from "../components/Navbars/VerticalNarbar/VerticalNavToken";
 export { default as VerticalNavSum } from "./Navbars/VerticalNarbar/VerticalNavSum";

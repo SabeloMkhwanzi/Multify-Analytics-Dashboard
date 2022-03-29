@@ -5,9 +5,8 @@ import SelectButton from "./SelectButton";
 import Balances from "./Balances";
 import Transaction from "./Transaction";
 
-//const balancesEndpoint = "balances_v2";
-const apikey = "ckey_4e73d56514984838ab3206fbaf4";
-//const apikey = process.env.PUBLIC_COVALENT_API_KEY;
+//API KEY
+const API_KEY = "ckey_4e73d56514984838ab3206fbaf4";
 
 function WalletInterface() {
   const [items, setItems] = useState([]);
@@ -30,11 +29,11 @@ function WalletInterface() {
     e.preventDefault();
 
     const response = await fetch(
-      `https://api.covalenthq.com/v1/${chainId}/address/${userAddress}/${walletsStatus}/?quote-currency=USD&format=JSON&nft=false&no-nft-fetch=false&key=${apikey}`
+      `https://api.covalenthq.com/v1/${chainId}/address/${userAddress}/${walletsStatus}/?quote-currency=USD&format=JSON&nft=false&no-nft-fetch=false&key=${API_KEY}`
     );
     const data = await response.json();
     setItems(data.data.items);
-    console.log(items);
+    //console.log(items);
   };
 
   return (
@@ -99,7 +98,6 @@ function WalletInterface() {
         </Text>
         <Transaction getTransaction={items} />
       </Box>
-      {console.log(items)}
     </Box>
   );
 }

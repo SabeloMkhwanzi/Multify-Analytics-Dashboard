@@ -3,16 +3,12 @@ import {
   chakra,
   Flex,
   useColorModeValue,
-  Button,
-  useBreakpointValue,
   Stack,
   SimpleGrid,
-  Box,
   Text,
   Avatar,
   VStack,
 } from "@chakra-ui/react";
-import millify from "millify";
 import moment from "moment";
 
 export default function Transaction({ getTransaction }) {
@@ -124,56 +120,4 @@ export default function Transaction({ getTransaction }) {
       </Flex>
     </>
   );
-}
-
-{
-  /* <Box
-        w="full"
-        maxW="xs"
-        mx={10}
-        px={5}
-        ps={5}
-        py={3}
-        bg="#243036"
-        shadow="xl"
-        rounded="md "
-        borderRadius="lg"
-        borderWidth={1}
-        borderColor="gray.600"
-      >
-        <Box>
-          <Stack direction="column">
-            <Text
-              fontSize="lg"
-              mt={2}
-              textAlign="center"
-              color="white"
-              as="samp"
-              fontWeight="bold"
-            >
-              {}
-            </Text>
-            <Text
-              fontSize="lg"
-              mt={2}
-              textAlign="center"
-              color="white"
-              as="samp"
-              fontWeight="bold"
-            >
-              {}
-            </Text>
-            <Text
-              fontSize="lg"
-              mt={2}
-              textAlign="center"
-              color="white"
-              as="samp"
-              fontWeight="bold"
-            >
-              {}
-            </Text>
-          </Stack>
-        </Box>
-      </Box> */
 }

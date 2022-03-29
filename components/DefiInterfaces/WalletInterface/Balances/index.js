@@ -3,15 +3,11 @@ import {
   chakra,
   Flex,
   useColorModeValue,
-  Button,
-  useBreakpointValue,
   Stack,
   SimpleGrid,
-  Box,
   Text,
   Avatar,
 } from "@chakra-ui/react";
-import millify from "millify";
 
 export default function Balances({ getBalance }) {
   const TextColorMode1 = useColorModeValue("gray.700", "white");

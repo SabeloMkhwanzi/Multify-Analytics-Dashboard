@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Box, Text } from "@chakra-ui/react";
 
 //API Key
-const apikey = "ckey_4e73d56514984838ab3206fbaf4";
+const API_KEY = "ckey_4e73d56514984838ab3206fbaf4";
 
 class Health extends Component {
   state = {
@@ -28,7 +28,7 @@ class Health extends Component {
     e.preventDefault();
 
     const api_call = await fetch(
-      `https://api.covalenthq.com/v1/${chainId}/xy=k/${dexName}/health/?quote-currency=USD&format=JSON&key=${apikey}`
+      `https://api.covalenthq.com/v1/${chainId}/xy=k/${dexName}/health/?quote-currency=USD&format=JSON&key=${API_KEY}`
     );
     const data = await api_call.json();
     this.setState({ items: data.data.items });

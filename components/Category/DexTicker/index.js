@@ -4,7 +4,8 @@ import { Box, Flex, useColorModeValue, Text } from "@chakra-ui/react";
 import Ticker from "react-ticker";
 
 //API Key
-const apikey = "ckey_4e73d56514984838ab3206fbaf4";
+const API_KEY = "ckey_4e73d56514984838ab3206fbaf4";
+//const API_KEY = process.env["API_KEY"];
 
 function DexTicker() {
   const [items, setItems] = useState([]);
@@ -25,7 +26,7 @@ function DexTicker() {
   const getData = async () => {
     //Using fetch
     const response = await axios.get(
-      `https://api.covalenthq.com/v1/xy=k/supported_dexes/?quote-currency=USD&format=JSON&key=${apikey}`
+      `https://api.covalenthq.com/v1/xy=k/supported_dexes/?quote-currency=USD&format=JSON&key=${API_KEY}`
     );
     console.log(response.data.data);
     setItems(response.data.data.items);

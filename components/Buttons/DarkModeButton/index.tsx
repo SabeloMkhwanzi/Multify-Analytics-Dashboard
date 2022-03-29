@@ -13,7 +13,6 @@ export default function DarkModeButton() {
       size="lg"
       isChecked={isDark}
       onChange={toggleColorMode}
-      shadow="lg"
     />
   );
 }

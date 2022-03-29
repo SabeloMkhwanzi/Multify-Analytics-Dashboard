@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {
   Box,
-  chakra,
   SimpleGrid,
   Text,
   useColorModeValue,
@@ -16,8 +15,7 @@ import { LiquidityChart, VolumeChart } from "../..";
 import DexTicker from "../DexTicker";
 
 //API Key
-const apikey = "ckey_4e73d56514984838ab3206fbaf4";
-//const API_KEY = process.env['REACT_APP_COVALENT_API']
+const API_KEY = "ckey_4e73d56514984838ab3206fbaf4";
 
 function Overview() {
   const [items, setItems] = useState([]);
@@ -50,7 +48,7 @@ function Overview() {
     e.preventDefault();
 
     const response = await fetch(
-      `https://api.covalenthq.com/v1/${chainId}/xy=k/${dexName}/ecosystem/?quote-currency=USD&format=JSON&key=${apikey}`
+      `https://api.covalenthq.com/v1/${chainId}/xy=k/${dexName}/ecosystem/?quote-currency=USD&format=JSON&key=${API_KEY}`
     );
     const data = await response.json();
     setItems(data.data.items);
@@ -73,6 +71,7 @@ function Overview() {
     );
   };
 
+  console.log(process.env);
   return (
     <>
       <DexTicker />

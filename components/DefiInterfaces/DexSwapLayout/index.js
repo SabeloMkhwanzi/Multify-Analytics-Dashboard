@@ -3,9 +3,8 @@ import { Box, Flex, Stack, Text } from "@chakra-ui/react";
 import SwapInterface from "../DexSwapLayout/SwapInterface";
 import DexSelectButton from "./DexSelectButton";
 
-//const balancesEndpoint = "balances_v2";
-const apikey = "ckey_4e73d56514984838ab3206fbaf4";
-//const apikey = process.env.PUBLIC_COVALENT_API_KEY;
+//AsPI Key
+const API_KEY = "ckey_4e73d56514984838ab3206fbaf4";
 
 function DexSwapLayout() {
   const [items, setItems] = useState([]);
@@ -27,7 +26,7 @@ function DexSwapLayout() {
     e.preventDefault();
 
     const response = await fetch(
-      `https://api.covalenthq.com/v1/${chainId}/xy=k/${dexName}/tokens/?quote-currency=USD&format=JSON&key=${apikey}`
+      `https://api.covalenthq.com/v1/${chainId}/xy=k/${dexName}/tokens/?quote-currency=USD&format=JSON&key=${API_KEY}`
     );
     const data = await response.json();
     setItems(data.data.items);
@@ -75,7 +74,7 @@ function DexSwapLayout() {
           </Text>
         </Box>
       </Box>
-      {console.log(tokenListData)}
+
       <Stack direction="column">
         <Box justifyContent="center">
           <SwapInterface />

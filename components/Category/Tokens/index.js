@@ -6,8 +6,7 @@ import TokenTable from "./TokenTable";
 import DexTicker from "../DexTicker";
 
 //API Key
-const apikey = "ckey_4e73d56514984838ab3206fbaf4";
-//const API_KEY = process.env['REACT_APP_COVALENT_API']
+const API_KEY = "ckey_4e73d56514984838ab3206fbaf4";
 
 function Tokens() {
   const [items, setItems] = useState([]);
@@ -28,7 +27,7 @@ function Tokens() {
     e.preventDefault();
 
     const response = await fetch(
-      `https://api.covalenthq.com/v1/${chainId}/xy=k/${dexName}/tokens/?quote-currency=USD&format=JSON&key=${apikey}`
+      `https://api.covalenthq.com/v1/${chainId}/xy=k/${dexName}/tokens/?quote-currency=USD&format=JSON&key=${API_KEY}`
     );
 
     const data = await response.json();
