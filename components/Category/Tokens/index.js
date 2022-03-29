@@ -4,7 +4,6 @@ import { Box, Text } from "@chakra-ui/react";
 import DexSelectBtn from "../DexSelectBtn";
 import TokenTable from "./TokenTable";
 import DexTicker from "../DexTicker";
-import TokenCards from "./TokenTable/TokenCards";
 
 //API Key
 const apikey = "ckey_4e73d56514984838ab3206fbaf4";

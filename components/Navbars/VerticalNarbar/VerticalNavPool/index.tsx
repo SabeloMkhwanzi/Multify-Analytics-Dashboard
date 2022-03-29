@@ -29,6 +29,8 @@ export default function VerticalNarbar() {
   const sidebar = useDisclosure();
   const integrations = useDisclosure();
   const color = useColorModeValue("gray.600", "gray.300");
+  const BoxBgColor = useColorModeValue("gray.200", "#243036");
+  const BoxBorderColor = useColorModeValue("gray.200", "gray.500");
 
   const NavItem = (props) => {
     const { icon, children, ...rest } = props;
@@ -76,8 +78,8 @@ export default function VerticalNarbar() {
       pb="10"
       overflowX="hidden"
       overflowY="auto"
-      bg={useColorModeValue("white", "#243036")}
-      borderColor={useColorModeValue("inherit", "#243036")}
+      bg={BoxBgColor}
+      borderColor={BoxBorderColor}
       borderRightWidth="1px"
       w="45"
       borderRadius="xl"
@@ -162,7 +164,7 @@ export default function VerticalNarbar() {
   return (
     <Box
       as="section"
-      bg={useColorModeValue("gray.50", "gray.900")}
+      bg={useColorModeValue("#E4EFE7", "gray.900")}
       minH="100vh"
     >
       <SidebarContent display={{ base: "none", md: "unset" }} />

@@ -8,11 +8,16 @@ import {
   RadioGroup,
   Stack,
   Flex,
+  useColorModeValue,
 } from "@chakra-ui/react";
 
 import { useForm } from "react-hook-form";
 
 export default function SelectButton({ getWallet }) {
+  const InputBgColorMode = useColorModeValue("gray.100", "inherit");
+  const ButtonColorMode = useColorModeValue("#319795", "#00AF91");
+  const ButtonColorMode1 = useColorModeValue("gray.300", "#303E46");
+  const ButtonBorderColorMode1 = useColorModeValue("gray.300", "gray.600");
   useForm();
 
   return (
@@ -20,6 +25,7 @@ export default function SelectButton({ getWallet }) {
       <FormControl>
         <Stack spacing={1} direction="row">
           <Input
+            bg={InputBgColorMode}
             borderColor="gray.500"
             maxW={700}
             letterSpacing={2}
@@ -32,10 +38,10 @@ export default function SelectButton({ getWallet }) {
           <Select
             textAlign="center"
             maxW={150}
-            borderColor="gray.500"
+            borderColor={ButtonBorderColorMode1}
             name="chainId"
             type="number"
-            bg="#303E46"
+            bg={ButtonColorMode1}
           >
             <option name="chainId" value="1">
               Ethereum
@@ -63,7 +69,7 @@ export default function SelectButton({ getWallet }) {
             w={150}
             borderRadius="lg"
             right="0"
-            bgColor="#00AF91"
+            bgColor={ButtonColorMode}
             type="submit"
           >
             ANALYSE

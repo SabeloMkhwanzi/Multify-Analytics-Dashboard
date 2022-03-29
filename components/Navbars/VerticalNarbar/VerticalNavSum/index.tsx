@@ -12,6 +12,7 @@ import {
   Text,
   useColorModeValue,
   useDisclosure,
+  Image,
 } from "@chakra-ui/react";
 
 import { GiWallet, GiSuspensionBridge } from "react-icons/gi";
@@ -30,6 +31,8 @@ export default function VerticalNarbar() {
   const sidebar = useDisclosure();
   const integrations = useDisclosure();
   const color = useColorModeValue("gray.600", "gray.300");
+  const BoxBgColor = useColorModeValue("gray.200", "#243036");
+  const BoxBorderColor = useColorModeValue("gray.200", "gray.500");
 
   const NavItem = (props) => {
     const { icon, children, ...rest } = props;
@@ -77,8 +80,8 @@ export default function VerticalNarbar() {
       pb="10"
       overflowX="hidden"
       overflowY="auto"
-      bg={useColorModeValue("white", "#243036")}
-      borderColor={useColorModeValue("inherit", "#243036")}
+      bg={BoxBgColor}
+      borderColor={BoxBorderColor}
       borderRightWidth="1px"
       w="45"
       borderRadius="xl"
@@ -86,6 +89,10 @@ export default function VerticalNarbar() {
     >
       <Flex px="4" py="5" align="center">
         {/* <Logo /> */}
+
+        {/* <Flex>
+          <Image width={120} src="/multify.png" alt="dexdash logo" />
+        </Flex> */}
         <Text
           fontSize="2xl"
           ml="2"
@@ -101,7 +108,9 @@ export default function VerticalNarbar() {
         fontSize="lg"
         color="gray.500"
         aria-label="Main Navigation"
-        fontWeight="semibold"
+        fontWeight="bold"
+        textShadow="xl"
+        fontStyle="revert"
       >
         <NavItem icon={BiAnalyse}>
           <Link href="/summary">
@@ -163,7 +172,7 @@ export default function VerticalNarbar() {
   return (
     <Box
       as="section"
-      bg={useColorModeValue("gray.50", "gray.900")}
+      bg={useColorModeValue("#E4EFE7", "gray.900")}
       minH="100vh"
     >
       <SidebarContent display={{ base: "none", md: "unset" }} />

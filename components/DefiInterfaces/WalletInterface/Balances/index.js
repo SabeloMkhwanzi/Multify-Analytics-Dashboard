@@ -18,6 +18,14 @@ export default function Balances({ getBalance }) {
   const bg = useColorModeValue("white", "gray.800");
   const bg2 = useColorModeValue("gray.100", "gray.700");
 
+  const formatCash = (n) => {
+    if (n < 1e3) return n;
+    if (n >= 1e3 && n < 1e6) return +(n / 1e3).toFixed(1);
+    if (n >= 1e6 && n < 1e9) return +(n / 1e6).toFixed(1);
+    if (n >= 1e9 && n < 1e12) return +(n / 1e9).toFixed(1);
+    if (n >= 1e12) return +(n / 1e12).toFixed(1);
+  };
+
   return (
     <>
       <Flex
@@ -90,7 +98,7 @@ export default function Balances({ getBalance }) {
                   overflow="hidden"
                   whiteSpace="nowrap"
                 >
-                  {item.balance}
+                  {formatCash(item.balance)}
                 </chakra.span>
                 <chakra.span
                   textOverflow="ellipsis"

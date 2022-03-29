@@ -15,6 +15,12 @@ import {
 import { useForm } from "react-hook-form";
 
 export default function SelectButton({ getChain }) {
+  const BoxBgColor = useColorModeValue("gray.200", "#243036");
+  const BoxBorderColor = useColorModeValue("gray.200", "gray.500");
+  const ButtonColorMode = useColorModeValue("#319795", "#00AF91");
+  const ButtonColorMode1 = useColorModeValue("gray.300", "#303E46");
+  const ButtonBorderColorMode1 = useColorModeValue("gray.300", "gray.600");
+
   // const ref = useRef(null);
   // const myfunc = () => {
   //   console.log("I was activated 1 seconds later");
@@ -40,8 +46,8 @@ export default function SelectButton({ getChain }) {
       pb="10"
       overflowX="hidden"
       overflowY="auto"
-      bg={useColorModeValue("white", "#243036")}
-      borderColor={useColorModeValue("inherit", "gray.600")}
+      bg={BoxBgColor}
+      borderColor={BoxBorderColor}
       borderRightWidth="1px"
       w="60"
       borderRadius="xl"
@@ -56,7 +62,8 @@ export default function SelectButton({ getChain }) {
                 name="chainId"
                 type="number"
                 borderWidth={1}
-                borderColor="gray.600"
+                borderColor={ButtonBorderColorMode1}
+                bg={ButtonColorMode1}
               >
                 <option name="chainId" value="1">
                   Ethereum
@@ -83,7 +90,7 @@ export default function SelectButton({ getChain }) {
               <Button
                 borderRadius="lg"
                 right="0"
-                bgColor="#00AF91"
+                bgColor={ButtonColorMode}
                 type="submit"
                 textTransform="uppercase"
                 // ref={ref}

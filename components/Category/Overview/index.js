@@ -25,7 +25,10 @@ function Overview() {
   const [VolumeData, setVolumeGraph] = useState([]);
   const [graphLoader, setGraphLoader] = useState(true);
   const [graphErr, setErr] = useState(false);
-  // const currentDay = moment().format("YYYY-MM-DD");
+  const BoxBgColor = useColorModeValue("gray.200", "#243036");
+  const TextColorMode = useColorModeValue("gray.500", "gray.400");
+  const TextColorMode1 = useColorModeValue("gray.600", "white");
+  const BoxBorderColor = useColorModeValue("gray.200", "gray.500");
 
   const formatCash = (n) => {
     if (n < 1e3) return n;
@@ -34,10 +37,6 @@ function Overview() {
     if (n >= 1e9 && n < 1e12) return +(n / 1e9).toFixed(1);
     if (n >= 1e12) return +(n / 1e12).toFixed(1);
   };
-
-  //const m = moment(new Date("2019/06/01 14:04:03"));
-
-  //let timestamp = Number(new Date());
 
   useEffect(() => {
     items;
@@ -121,26 +120,31 @@ function Overview() {
               px={5}
               ps={5}
               py={3}
-              bg="#243036"
+              bg={BoxBgColor}
               shadow="xl"
               rounded="md "
               borderRadius="lg"
               borderWidth={1}
-              borderColor="gray.600"
+              borderColor={BoxBorderColor}
             >
               <Box>
-                <Text color="gray.400" fontSize="sm" fontWeight="thin" mt={2}>
+                <Text
+                  color={TextColorMode}
+                  fontSize="sm"
+                  fontWeight="thin"
+                  mt={2}
+                >
                   Total Fees(24h)
                 </Text>
                 <Text
                   fontSize="lg"
                   mt={2}
                   textAlign="center"
-                  color="white"
+                  color={TextColorMode1}
                   as="samp"
                   fontWeight="bold"
                 >
-                  ${item.total_fees_24h}
+                  ${formatCash(item.total_fees_24h)}
                 </Text>
               </Box>
             </Box>
@@ -150,22 +154,27 @@ function Overview() {
               mx={10}
               px={4}
               py={3}
-              bg="#243036"
+              bg={BoxBgColor}
               shadow="xl"
               rounded="md "
               borderRadius="lg"
               borderWidth={1}
-              borderColor="gray.600"
+              borderColor={BoxBorderColor}
             >
               <Box>
-                <Text color="gray.400" fontSize="sm" fontWeight="thin" mt={2}>
+                <Text
+                  color={TextColorMode}
+                  fontSize="sm"
+                  fontWeight="thin"
+                  mt={2}
+                >
                   Total Pair (7d)
                 </Text>
                 <Text
                   fontWeight="bold"
                   fontSize="lg"
                   mt={2}
-                  color="white"
+                  color={TextColorMode1}
                   as="samp"
                 >
                   {item.total_active_pairs_7d}
@@ -178,22 +187,27 @@ function Overview() {
               mx={10}
               px={4}
               py={3}
-              bg="#243036"
+              bg={BoxBgColor}
               shadow="xl"
               rounded="md "
               borderRadius="lg"
               borderWidth={1}
-              borderColor="gray.600"
+              borderColor={BoxBorderColor}
             >
               <Box>
-                <Text fontSize="sm" fontWeight="thin" mt={2} color="gray.400">
+                <Text
+                  fontSize="sm"
+                  fontWeight="thin"
+                  mt={2}
+                  color={TextColorMode}
+                >
                   Total Swaps(24h)
                 </Text>
                 <Text
                   fontWeight="bold"
                   fontSize="lg"
                   mt={2}
-                  color="white"
+                  color={TextColorMode1}
                   as="samp"
                 >
                   {item.total_swaps_24h}
@@ -217,7 +231,7 @@ function Overview() {
                   textTransform="uppercase"
                   ml="2"
                 >
-                  <Text color="white">{item.dex_name}</Text>
+                  <Text color={TextColorMode1}>{item.dex_name}</Text>
                 </Box>
               </Box>
             </Box>
@@ -235,7 +249,7 @@ function Overview() {
                   textTransform="uppercase"
                   ml="2"
                 >
-                  <Text color="white">
+                  <Text color={TextColorMode1}>
                     ${millify(item.gas_token_price_quote)}
                   </Text>
                 </Box>
@@ -265,12 +279,12 @@ function Overview() {
             px={5}
             ps={5}
             py={3}
-            bg="#243036"
+            bg={BoxBgColor}
             shadow="xl"
             rounded="md "
             borderRadius="lg"
             borderWidth={1}
-            borderColor="gray.600"
+            borderColor={BoxBorderColor}
             h="400px"
             minW="72%"
           >
@@ -295,12 +309,12 @@ function Overview() {
             px={5}
             ps={5}
             py={3}
-            bg="#243036"
+            bg={BoxBgColor}
             shadow="xl"
             rounded="md "
             borderRadius="lg"
             borderWidth={1}
-            borderColor="gray.600"
+            borderColor={BoxBorderColor}
             h="400px"
             minW="72%"
           >

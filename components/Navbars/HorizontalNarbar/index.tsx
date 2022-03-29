@@ -33,11 +33,14 @@ export default function HorizontalNarbar() {
   const mobileNav = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
   const isDark = colorMode === "dark";
+  const BoxBgColor = useColorModeValue("gray.200", "#243036");
+  const NavButtonColorMode = useColorModeValue("gray.300", "gray.900");
+  const ButtonColorMode = useColorModeValue("#319795", "#00AF91");
 
   return (
     <>
       <chakra.header
-        bg="#243036"
+        bg={BoxBgColor}
         w="full"
         px={{ base: 2, sm: 4 }}
         py={4}
@@ -157,7 +160,7 @@ export default function HorizontalNarbar() {
                 </Link>
               </Button>
               <Button
-                bgColor="gray.900"
+                bgColor={NavButtonColorMode}
                 borderRadius="xl"
                 variant="ghost"
                 leftIcon={<GiWallet />}
@@ -170,7 +173,7 @@ export default function HorizontalNarbar() {
                 </Link>
               </Button>
               <Button
-                bgColor="gray.900"
+                bgColor={NavButtonColorMode}
                 borderRadius="xl"
                 variant="ghost"
                 leftIcon={<RiExchangeDollarFill />}

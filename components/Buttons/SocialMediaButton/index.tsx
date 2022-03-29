@@ -35,6 +35,7 @@ const SocialButton = ({
       _hover={{
         bg: useColorModeValue("blackAlpha.200", "whiteAlpha.200"),
       }}
+      shadow="md"
     >
       <VisuallyHidden>{label}</VisuallyHidden>
       {children}

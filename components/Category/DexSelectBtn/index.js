@@ -17,6 +17,12 @@ import {
 import { useForm } from "react-hook-form";
 
 export default function SelectButton(props) {
+  const BoxBgColor = useColorModeValue("gray.200", "#243036");
+  const BoxBorderColor = useColorModeValue("gray.200", "gray.500");
+  const ButtonColorMode = useColorModeValue("#319795", "#00AF91");
+  const ButtonColorMode1 = useColorModeValue("gray.300", "#303E46");
+  const ButtonBorderColorMode1 = useColorModeValue("gray.300", "gray.600");
+
   const ref = useRef(null);
   useForm();
 
@@ -41,8 +47,8 @@ export default function SelectButton(props) {
       pb="10"
       overflowX="hidden"
       overflowY="auto"
-      bg={useColorModeValue("white", "#243036")}
-      borderColor={useColorModeValue("inherit", "gray.600")}
+      bg={BoxBgColor}
+      borderColor={BoxBorderColor}
       borderRightWidth="1px"
       w="55"
       borderRadius="xl"
@@ -57,8 +63,9 @@ export default function SelectButton(props) {
                 name="chainId"
                 type="number"
                 borderWidth={1}
-                borderColor="gray.600"
-                bg="#303E46"
+                borderColor={ButtonBorderColorMode1}
+                bg={ButtonColorMode1}
+                shadow="md"
               >
                 <option name="chainId" value="1">
                   Ethereum
@@ -87,9 +94,10 @@ export default function SelectButton(props) {
                 onClick={myfunc}
                 borderRadius="lg"
                 right="0"
-                bgColor="#00AF91"
+                bg={ButtonColorMode}
                 type="submit"
                 textTransform="uppercase"
+                shadow="lg"
               >
                 analyse
               </Button>
@@ -102,7 +110,7 @@ export default function SelectButton(props) {
               maxW={150}
               name="dexName"
               type="number"
-              defaultValue="uniswap_v2"
+              defaultValue="sushiswap"
             >
               <Text
                 mb={2}

@@ -8,13 +8,11 @@ const apikey = "ckey_4e73d56514984838ab3206fbaf4";
 
 function DexTicker() {
   const [items, setItems] = useState([]);
-  const bg1 = useColorModeValue("white", "gray.800");
-  const color1 = useColorModeValue("gray.800", "gray.400");
-  const bg2 = useColorModeValue("brand.200", "brand.300");
-  const color2 = useColorModeValue("brand.800", "brand.900");
-  const color3 = useColorModeValue("gray.800", "white");
-  const color4 = useColorModeValue("gray.600", "gray.300");
-  const bg3 = useColorModeValue("#F9FAFB", "gray.600");
+  const chainNameText = useColorModeValue("black", "gray.500");
+  const TextColorMode = useColorModeValue("brand.200", "brand.300");
+  const BoxTextColor = useColorModeValue("red", "green");
+  const borderColor = useColorModeValue("gray.100", "gray.600");
+  const BoxBgColor = useColorModeValue("gray.200", "#243036");
 
   useEffect(() => {
     getData();
@@ -41,12 +39,12 @@ function DexTicker() {
       {({}) => (
         <Flex
           borderRadius="xl"
-          bg="#243036"
+          bg={BoxBgColor}
           p={0.1}
           w="full"
           alignItems="center"
           justifyContent="center"
-          borderColor="gray.600"
+          borderColor={borderColor}
           borderWidth={1}
           mb={8}
         >
@@ -57,18 +55,18 @@ function DexTicker() {
               mx="auto"
               px={4}
               py={3}
-              bg="#243036"
+              bg={BoxBgColor}
               shadow="md"
               key={item.factory_contract_address}
             >
               <Flex justifyContent="space-between" alignItems="center">
-                <Text fontSize="md" color={color1}>
+                <Text fontSize="md" color={chainNameText}>
                   {item.chain_name}
                 </Text>
 
                 <Text
-                  bg={bg2}
-                  color="green.500"
+                  bg={TextColorMode}
+                  color={BoxTextColor}
                   px={3}
                   py={1}
                   rounded="full"
@@ -79,7 +77,12 @@ function DexTicker() {
               </Flex>
 
               <Box>
-                <Text fontSize="lg" fontWeight="bold" mt={2} color={color3}>
+                <Text
+                  fontSize="lg"
+                  fontWeight="bold"
+                  mt={2}
+                  color={TextColorMode}
+                >
                   {item.dex_name}
                 </Text>
               </Box>

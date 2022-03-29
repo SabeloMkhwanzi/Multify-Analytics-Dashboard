@@ -35,7 +35,7 @@ export default function WalletModel() {
 
   // Button bgColor
   const bgColor = useColorModeValue("blue.200", "blue.500");
-
+  const ButtonColorMode = useColorModeValue("#319795", "#00AF91");
   // Fetching balance information
   const [{ data: getBalance }] = useBalance({
     addressOrName: accountData?.address,
@@ -68,7 +68,7 @@ export default function WalletModel() {
           <Button
             borderRadius="lg"
             right="4.5rem"
-            bgColor="#00AF91"
+            bgColor={ButtonColorMode}
             leftIcon={<GiWallet />}
             onClick={disconnect}
           >
@@ -84,7 +84,7 @@ export default function WalletModel() {
         borderRadius="lg"
         borderColor="gray.500"
         right="4.5rem"
-        bgColor="#00AF91"
+        bgColor={ButtonColorMode}
         leftIcon={<GiWallet />}
         onClick={onOpen}
       >
@@ -102,7 +102,7 @@ export default function WalletModel() {
                 <Button
                   w="full"
                   borderRadius="full"
-                  bgColor="#00AF91"
+                  bgColor={ButtonColorMode}
                   disabled={!x.ready}
                   onClick={() => connect(x)}
                 >
