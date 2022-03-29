@@ -8,8 +8,11 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Multify Analytics</title>
-        <meta name="description" content="Multi-Chain Analyses Defi Dashbord" />
+        <title>Multify - Analytics DashDex </title>
+        <meta
+          name="description"
+          content="Multi-Chain Analytics Defi Dex Dashbord powered by Covalent Api: Built with Nextjs and Chakra UI"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Box>

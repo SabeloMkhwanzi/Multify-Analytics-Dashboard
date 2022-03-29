@@ -12,6 +12,7 @@ import {
   Text,
   useColorModeValue,
   useDisclosure,
+  Image,
 } from "@chakra-ui/react";
 
 import { GiWallet, GiSuspensionBridge } from "react-icons/gi";
@@ -85,17 +86,10 @@ export default function VerticalNarbar() {
       w="45"
       {...props}
     >
-      <Flex px="4" py="5" align="center">
-        {/* <Logo /> */}
-        <Text
-          fontSize="2xl"
-          ml="2"
-          color={useColorModeValue("brand.500", "white")}
-          fontWeight="semibold"
-        >
-          MULTIFY Analytics
-        </Text>
+      <Flex justifyContent="center" my="8">
+        <Image width={120} src="/multifylogo.png" alt="dexdash logo" />
       </Flex>
+
       <Flex
         direction="column"
         as="nav"
@@ -194,3 +188,5 @@ export default function VerticalNarbar() {
     </Box>
   );
 }
+
+//logomakr.com/app/83Pqqm
