@@ -64,13 +64,13 @@ health data
 #### 5. Get Balance, Transactions: Usage Endpoint
 ```https: //api.covalenthq.com/v1/chainId/address/address/balances_v2/ https://api.covalenthq.com/v1/chainId/address/address/transactions_v2/```
 
-#### Live website: [Multify Analytics Dex Dashboard](https://multify.vercel.app/)
+#### Live website: [Multify Analytics DashDex](https://multify.vercel.app/)
 
 #### GitHub Repository: [github.com/SabeloMkhwanazi](https://github.com/SabeloMkhwanzi/Multify-Analytics-Dashboard)
 
 #### Demo video: [video](https://youtu.be/FAbeKKlyvFY)
 
-#### Project Start Date: 11 March, 2022
+#### Project Start - Finish Date: 11 - 29 March, 2022
 
 #### Wallet Address : 0xc7031F0779F16685055Bc6104894698877Eb3327
 
