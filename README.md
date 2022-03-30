@@ -73,7 +73,7 @@ health data
 First, clone the repo with the following git command:
 
 ```bash
-git clone https://github.com/SabeloMkhwanzi/Multify-Analytics-Dashboard/
+git clone https://github.com/SabeloMkhwanzi/Multify-Analytics-Dashboard
 ```
 
 Second, open a terminal in the root directory of the project and run:
