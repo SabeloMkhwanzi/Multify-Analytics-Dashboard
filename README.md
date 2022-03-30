@@ -101,5 +101,5 @@ npm run dev
 # or
 yarn dev
 ```
-Thank for drop by!!! 😊
+Happy Hacking!😊
 
