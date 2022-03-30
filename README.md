@@ -28,7 +28,7 @@
 1 Home Page DarkMode - Dashboard overview\
 ![HomePage](https://github.com/SabeloMkhwanzi/Multify-Analytics-Dashboard/blob/main/public/Multify-homepage-GR13-Hackathon1.jpg)
 
-1 Home Page LightMode - Dashboard overview\
+2 Home Page LightMode - Dashboard overview\
 ![HomePage](https://github.com/SabeloMkhwanzi/Multify-Analytics-Dashboard/blob/main/public/Multify-homepage-GR13-Hackathon2.jpg)
 
 
