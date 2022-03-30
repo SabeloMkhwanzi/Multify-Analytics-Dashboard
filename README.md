@@ -36,8 +36,8 @@
 ##### 2. Home Page LightMode
 ![HomePage](https://github.com/SabeloMkhwanzi/Multify-Analytics-Dashboard/blob/main/public/Multify-homepage-GR13-Hackathon2.jpg)
 
-##### 3. Pool 
-![Pool](https://github.com/SabeloMkhwanzi/Multify-Analytics-Dashboard/blob/main/public/Multify-pools-GR13-Hackathon5.jpg)
+##### 3. Pools 
+![Pools](https://github.com/SabeloMkhwanzi/Multify-Analytics-Dashboard/blob/main/public/Multify-pools-GR13-Hackathon5.jpg)
 
 ##### 4. Wallet 
 ![Wallet](https://github.com/SabeloMkhwanzi/Multify-Analytics-Dashboard/blob/main/public/Multify-wallet-GR13-Hackathon3.jpg)
