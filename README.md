@@ -1,67 +1,97 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Hackathon: Grants Round 13 Hackatho Multi-Chain Web3 Projects
+
+## Multify Analytics Dex Dashboard: A multi-chain analytics dashboard. A tool for Investors, Cryptocurrence holderS to visualize, analyse data on various blockchains and decentralization exchanges on one platform.
+
+## Project Concept
+* Building a platform that helps users to remain on one platform that providers all the tools for an Investors, Cryptocurrence holders.
+* Providing a simple way to track and visualize all assets.
+* With the usage of COVALENT API we are able to bringing visibility to billions of blockchain data points - [Covalent API Reference](https://chakra-ui.com/) 
+
+## Tools
+* Building Framework: [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+* Frontend: [Chakra-ui](https://chakra-ui.com/) - Create accessible React apps with speed
+* Backend: [Covalent Api](https://www.covalenthq.com/) - Covalent provides a unified API bringing visibility to billions of blockchain data points.
+* Dex Interface: [Uniswap Labs Widgets](https://docs.uniswap.org/sdk/widgets/swap-widget) - Getting Started with the Swap Uniswap Widget.
+* HTTPS and WebSocketr Provider:[Infura](https://docs.infura.io/infura/networks/ethereum) - guide on how to use the most versatile blockchain developer platform.
+* Wallet connection: [Wagmi](https://wagmi-xyz.vercel.app/) - is a React Hooks library for Ethereum, built on ethers.js.
+* Hosting platform: [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+## Project Feature 
+* Overview Dashboard
+* Pools
+* Token
+* Wallet
+* DEX Swap 
+
+### Project Preview - I used the xy=k  which is a generalized Uniswap-like endpoints for exchanges on various chains 
+
+1 Home Page - Dashboard overview\
+![]()
+
+
+#### 1. Ticker Component:  supported DEXes 
+```https://api.covalenthq.com/v1/xy=k/supported_dexes/?quote-currency=USD&format=JSON&key=${API_KEY}```
+
+#### 2. Summary overview: Ecosystem chart data
+ecosystem chart data
+```https://api.covalenthq.com/v1/${chainId}/xy=k/${dexName}/ecosystem/?&key=${API_KEY}```
+health data
+```https://api.covalenthq.com/v1/1/xy=k/uniswap_v2/health/```
+
+#### 3. Pools Component: Pools endpoint xy=k 
+
+```//https://api.covalenthq.com/v1/${chainId}/xy=k/${dexName}/pools/?&key=${apikey}```
+
+#### 4. Token Component: Tokens endpoint xy=k
+```https://api.covalenthq.com/v1/${chainId}/xy=k/${dexName}/tokens/?quote-currency=USD&format=JSON&key=${apikey}```
+
+#### 5. Get Balance, Transactions: Usage Endpoint
+```https: //api.covalenthq.com/v1/chainId/address/address/balances_v2/ https://api.covalenthq.com/v1/chainId/address/address/transactions_v2/```
+
+#### Live website: [Multify Analytics Dex Dashboard](https://multify.vercel.app/)
+
+#### GitHub Repository: [github.com/SabeloMkhwanazi](https://github.com/SabeloMkhwanzi/Multify-Analytics-Dashboard)
+
+#### Demo video: [video](https://youtu.be/FAbeKKlyvFY)
+
+#### Project Start Date: 11 March, 2022
+
+#### Wallet Address : 0xc7031F0779F16685055Bc6104894698877Eb3327
+
+#### Running the app
 
 ## Getting Started
 
-First, run the development server:
+First, clone the repo with the following git command:
+
+```bash
+git clone https://github.com/SabeloMkhwanzi/Multify-Analytics-Dashboard/
+```
+
+Second, open a terminal in the root directory of the project and run:
+
+```bash
+npm install
+```
+
+to install all the package dependencies for the project
+
+
+Create a .env file in the root folder and populate it with the following variables:
+
+```
+
+INFURA_ID=
+REACT_APP_RPC_ENDPOINT=
+API_KEY=
+
+```
+Finally, run the development server:
 
 ```bash
 npm run dev
 # or
 yarn dev
 ```
+Happy hacking!!! 😊
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-# Multify-Analytics-Dashboard
-
-## 1. Ticker Component: Usage endpoint
-
-`xy=k is a generalized Uniswap-like endpoints for exchanges on various chains. supported DEXes `https://api.covalenthq.com/v1/xy=k/supported_dexes/?quote-currency=USD&format=JSON&key=${API_KEY}`
-`
-
-## 2. Summary overview ecosystem chart data
-
-`xy=k is a generalized Uniswap-like endpoints for exchanges on various chains.
-
-Summary overview
-ecosystem chart data
-`https://api.covalenthq.com/v1/${chainId}/xy=k/${dexName}/ecosystem/?quote-currency=USD&format=JSON&key=${API_KEY}`
-health data
-https://api.covalenthq.com/v1/1/xy=k/uniswap_v2/health/?quote-currency=USD&format=JSON&key=ckey_4e73d56514984838ab3206fbaf4
-`
-
-## 3. Pools Component: Usage Endpoint
-
-` //Pools endpoint xy=k //https://api.covalenthq.com/v1/${chainId}/xy=k/${dexName}/pools/?quote-currency=USD&format=JSON&key=${apikey}`
-
-## 4. Token Component: Usage Endpoint
-
-` xy=k is a generalized Uniswap-like endpoints for exchanges on various chains.
-
-Pools endpoint xy=k
-https://api.covalenthq.com/v1/${chainId}/xy=k/${dexName}/tokens/?quote-currency=USD&format=JSON&key=${apikey}`
-
-## 5. Get Balance, Transactions: Usage Endpoint
-
-`https: //api.covalenthq.com/v1/chainId/address/address/balances_v2/ https://api.covalenthq.com/v1/chainId/address/address/transactions_v2/`
