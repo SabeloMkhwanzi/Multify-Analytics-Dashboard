@@ -29,7 +29,7 @@
 ![HomePage](https://github.com/SabeloMkhwanzi/Multify-Analytics-Dashboard/blob/main/public/Multify-homepage-GR13-Hackathon1.jpg)
 
 1 Home Page LightMode - Dashboard overview\
-![HomePage]()
+![HomePage](https://github.com/SabeloMkhwanzi/Multify-Analytics-Dashboard/blob/main/public/Multify-homepage-GR13-Hackathon2.jpg)
 
 
 #### 1. Ticker Component:  supported DEXes 
