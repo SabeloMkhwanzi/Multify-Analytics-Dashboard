@@ -3,9 +3,9 @@
 ## Multify Analytics Dex Dashboard: A multi-chain analytics dashboard. A tool for Investors, Cryptocurrence holderS to visualize, analyse data on various blockchains and decentralization exchanges on one platform.
 
 ## Project Concept
-* Building a platform that helps users to remain on one platform that providers all the tools for an Investors, Cryptocurrence holders.
+* Building a platform that helps users to remain on one platform that providers all the tools for an Investors, Cryptocurrency holders.
 * Providing a simple way to track and visualize all assets.
-* With the usage of COVALENT API we are able to bringing visibility to billions of blockchain data points - [Covalent API Reference](https://chakra-ui.com/) 
+* With the usage of COVALENT API we are able to bringing visibility to billions of blockchain data points on this Dashboard- [Covalent API Reference](https://chakra-ui.com/) 
 
 ## Tools
 * Building Framework: [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
