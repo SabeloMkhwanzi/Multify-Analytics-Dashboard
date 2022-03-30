@@ -25,8 +25,11 @@
 
 ### Project Preview - I used the xy=k  which is a generalized Uniswap-like endpoints for exchanges on various chains 
 
-1 Home Page - Dashboard overview\
+1 Home Page DarkMode - Dashboard overview\
 ![HomePage](https://github.com/SabeloMkhwanzi/Multify-Analytics-Dashboard/blob/main/public/Multify-homepage-GR13-Hackathon1.jpg)
+
+1 Home Page LightMode - Dashboard overview\
+![HomePage]()
 
 
 #### 1. Ticker Component:  supported DEXes 
