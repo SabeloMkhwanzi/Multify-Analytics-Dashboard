@@ -98,5 +98,5 @@ npm run dev
 # or
 yarn dev
 ```
-Happy hacking!!! 😊
+Thank for drop by!!! 😊
 
