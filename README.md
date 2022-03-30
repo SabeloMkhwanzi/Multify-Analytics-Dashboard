@@ -3,9 +3,11 @@
 <!-- [HERE](https://gitcoin.co/issue/covalenthq/covalent-gitcoin-bounties/19/100028550) -->
  
 ## Multify Analytics DashDeX
-### Is a multi-chain analytics dashboard, a tool for Investors, Cryptocurrence holders to visualize, analyse data on various blockchains and decentralization exchanges on one platform.
 
-## Project Concept
+### Project Description
+* Multify is a multi-chain analytics dashboard, a tool for Investors, Cryptocurrence holders to visualize, analyse data on various blockchains and decentralization exchanges on one platform.
+
+### Project Concept
 * Building a platform that helps users to remain on one platform that providers all the tools for an Investors, Cryptocurrency holders.
 * Providing a simple way to track and visualize all assets.
 * With the usage of COVALENT API we are able to bringing visibility to billions of blockchain data points on this Dashboard- [Covalent API Reference](https://chakra-ui.com/) 
