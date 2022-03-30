@@ -1,5 +1,6 @@
-# Hackathon: Grants Round 13 Hackatho Multi-Chain Web3 Projects
-
+# Hackathon: Gitcoin Grants Round 13 Hackathon
+## Challenge Description: Build A Multi-Chain Web3 Projects using Covalent APIS [HERE](https://gitcoin.co/issue/covalenthq/covalent-gitcoin-bounties/19/100028550)
+ 
 ## Multify Analytics Dex Dashboard: A multi-chain analytics dashboard. A tool for Investors, Cryptocurrence holderS to visualize, analyse data on various blockchains and decentralization exchanges on one platform.
 
 ## Project Concept
