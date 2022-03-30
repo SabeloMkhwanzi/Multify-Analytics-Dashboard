@@ -1,5 +1,6 @@
 # Hackathon: Gitcoin Grants Round 13 Hackathon
-## Challenge Description: Build A Multi-Chain Web3 Projects using Covalent API's [HERE](https://gitcoin.co/issue/covalenthq/covalent-gitcoin-bounties/19/100028550)
+## The Challenge Description: Build A Multi-Chain Web3 Projects using Covalent API's 
+<!-- [HERE](https://gitcoin.co/issue/covalenthq/covalent-gitcoin-bounties/19/100028550) -->
  
 ## Multify Analytics DashDeX
 ### Is a multi-chain analytics dashboard, a tool for Investors, Cryptocurrence holders to visualize, analyse data on various blockchains and decentralization exchanges on one platform.
@@ -14,7 +15,7 @@
 * Frontend: [Chakra-ui](https://chakra-ui.com/) - Create accessible React apps with speed
 * Backend: [Covalent Api](https://www.covalenthq.com/) - Covalent provides a unified API bringing visibility to billions of blockchain data points.
 * Dex Interface: [Uniswap Labs Widgets](https://docs.uniswap.org/sdk/widgets/swap-widget) - Getting Started with the Swap Uniswap Widget.
-* HTTPS and WebSocketr Provider:[Infura](https://docs.infura.io/infura/networks/ethereum) - guide on how to use the most versatile blockchain developer platform.
+* HTTPS and WebSocket Provider: [Infura](https://docs.infura.io/infura/networks/ethereum) - guide on how to use the most versatile blockchain developer platform.
 * Wallet connection: [Wagmi](https://wagmi-xyz.vercel.app/) - is a React Hooks library for Ethereum, built on ethers.js.
 * Hosting platform: [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
@@ -27,10 +28,10 @@
 
 ### Project Preview - I used the xy=k  which is a generalized Uniswap-like endpoints for exchanges on various chains 
 
-1 Home Page DarkMode - Dashboard overview\
+##### 1. Home Page DarkMode
 ![HomePage](https://github.com/SabeloMkhwanzi/Multify-Analytics-Dashboard/blob/main/public/Multify-homepage-GR13-Hackathon1.jpg)
 
-2 Home Page LightMode - Dashboard overview\
+##### 2. Home Page LightMode
 ![HomePage](https://github.com/SabeloMkhwanzi/Multify-Analytics-Dashboard/blob/main/public/Multify-homepage-GR13-Hackathon2.jpg)
 
 
