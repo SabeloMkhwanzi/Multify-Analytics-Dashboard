@@ -1,4 +1,4 @@
-export { default as ConnectButton } from "./Buttons/ConnectButton";
+//export { default as ConnectButton } from "./Buttons/ConnectButton";
 export { default as DarkModeButton } from "./Buttons/DarkModeButton";
 export { default as SocialMediaButton } from "./Buttons/SocialMediaButton";
 export { default as BridgeInterface } from "./DefiInterfaces/BridgeInterface";
@@ -16,11 +16,10 @@ export { default as VerticalNavToken } from "../components/Navbars/VerticalNarba
 export { default as VerticalNavSum } from "./Navbars/VerticalNarbar/VerticalNavSum";
 export { default as Overview } from "./Category/Overview";
 export { default as Health } from "./Category/Health";
-export { default as DexTicker } from "./Category/DexTicker";
 export { default as TokenTable } from "./Category/Tokens/TokenTable";
 export { default as PoolTable } from "./Category/Pools/PoolTable";
 export { default as Balances } from "./DefiInterfaces/WalletInterface/Balances";
 export { default as Portfolio } from "./DefiInterfaces/WalletInterface/Portfolio";
 export { default as Transaction } from "./DefiInterfaces/WalletInterface/Transaction";
-export { default as SwapInterface } from "./DefiInterfaces/DexSwapLayout/SwapInterface";
+//export { default as SwapInterface } from "./DefiInterfaces/DexSwapLayout/SwapInterface";
 export { default as DexSelectButton } from "./DefiInterfaces/DexSwapLayout/DexSelectButton";

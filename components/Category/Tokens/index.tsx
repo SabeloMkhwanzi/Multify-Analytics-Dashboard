@@ -3,10 +3,9 @@ import { Box, Text } from "@chakra-ui/react";
 
 import DexSelectBtn from "../DexSelectBtn";
 import TokenTable from "./TokenTable";
-import DexTicker from "../DexTicker";
 
-//API Key
-const API_KEY = "ckey_4e73d56514984838ab3206fbaf4";
+// COVALENT API Key
+const API_KEY = process.env.NEXT_PUBLIC_COVALENTKEY;
 
 function Tokens() {
   const [items, setItems] = useState([]);
@@ -31,12 +30,11 @@ function Tokens() {
 
     const data = await response.json();
     setItems(data.data.items);
-    console.log(items);
+    //console.log(items);
   };
 
   return (
     <>
-      <DexTicker />
       <Box>
         <Text
           ml={10}

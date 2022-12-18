@@ -3,8 +3,8 @@ import { Box, Flex, Stack, Text } from "@chakra-ui/react";
 import SwapInterface from "./SwapInterface";
 import DexSelectButton from "./DexSelectButton";
 
-//AsPI Key
-const API_KEY = "ckey_4e73d56514984838ab3206fbaf4";
+// COVALENT API Key
+const API_KEY = process.env.NEXT_PUBLIC_COVALENTKEY;
 
 function DexSwapLayout() {
   const [items, setItems] = useState([]);

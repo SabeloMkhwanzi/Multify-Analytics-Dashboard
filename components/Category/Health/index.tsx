@@ -1,18 +1,13 @@
 import React, { Component } from "react";
 import { Box, Text } from "@chakra-ui/react";
 
-//API Key
-const API_KEY = "ckey_4e73d56514984838ab3206fbaf4";
+// COVALENT API Key
+const API_KEY = process.env.NEXT_PUBLIC_COVALENTKEY;
 
 class Health extends Component {
   state = {
     items: [],
   };
-
-  //xy=k is a generalized Uniswap-like endpoints for exchanges on various chains.
-  // health data
-  //https://api.covalenthq.com/v1/1/xy=k/uniswap_v2/health/?quote-currency=USD&format=JSON&key=ckey_4e73d56514984838ab3206fbaf4
-
   getApiHealth = async (e: {
     target: {
       elements: {
@@ -33,7 +28,7 @@ class Health extends Component {
     const data = await api_call.json();
     this.setState({ items: data.data.items });
 
-    console.log(this.state.items);
+    //console.log(this.state.items);
   };
 
   render() {

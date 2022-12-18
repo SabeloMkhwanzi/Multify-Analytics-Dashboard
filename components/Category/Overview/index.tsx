@@ -12,10 +12,9 @@ import moment from "moment";
 
 import DexSelectBtn from "../DexSelectBtn";
 import { LiquidityChart, VolumeChart } from "../..";
-import DexTicker from "../DexTicker";
 
-//API Key
-const API_KEY = "ckey_4e73d56514984838ab3206fbaf4";
+// COVALENT API Key
+const API_KEY = process.env.NEXT_PUBLIC_COVALENTKEY;
 
 function Overview() {
   const [items, setItems] = useState([]);
@@ -76,7 +75,6 @@ function Overview() {
 
   return (
     <>
-      <DexTicker />
       <Box justifyContent="center" mx="24">
         <Box>
           <Text

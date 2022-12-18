@@ -24,7 +24,6 @@ import { GiWallet, GiSuspensionBridge } from "react-icons/gi";
 
 import { RiExchangeDollarFill } from "react-icons/ri";
 import { AiOutlineMenu } from "react-icons/ai";
-import ConnectButton from "../../Buttons/ConnectButton";
 
 export default function HorizontalNarbar() {
   const bg = useColorModeValue("white", "gray.800");
@@ -206,7 +205,6 @@ export default function HorizontalNarbar() {
             display={mobileNav.isOpen ? "none" : "flex"}
             alignItems="center"
           >
-            <ConnectButton />
             <Switch
               position="fixed"
               top="1.5rem"

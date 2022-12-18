@@ -67,11 +67,11 @@ export default function SelectButton(props) {
                 bg={ButtonColorMode1}
                 shadow="md"
               >
-                <option name="chainId" value="1">
-                  Ethereum
-                </option>
                 <option name="chainId" value="137">
                   Polygon
+                </option>
+                <option name="chainId" value="1">
+                  Ethereum
                 </option>
                 <option name="chainId" value="43114">
                   Avalanche
@@ -110,7 +110,7 @@ export default function SelectButton(props) {
               maxW={150}
               name="dexName"
               type="number"
-              defaultValue="sushiswap"
+              defaultValue="quickswap"
             >
               <Text
                 mb={2}
