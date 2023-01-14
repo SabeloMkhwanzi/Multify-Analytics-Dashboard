@@ -123,11 +123,11 @@ export default function VerticalNarbar() {
             <Text>Wallet Analytics</Text>
           </Link>
         </NavItem>
-        <NavItem icon={RiExchangeDollarFill}>
+        {/* <NavItem icon={RiExchangeDollarFill}>
           <Link href="/swapinterface">
             <Text>Swap</Text>
           </Link>
-        </NavItem>
+        </NavItem> */}
         {/* <NavItem icon={GiSuspensionBridge}>
           <Link href="/bridgeinterface">
             <Text>Bridge</Text>

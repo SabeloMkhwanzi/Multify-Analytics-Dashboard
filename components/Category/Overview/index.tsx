@@ -75,7 +75,7 @@ function Overview() {
 
   return (
     <>
-      <Box justifyContent="center" mx="24">
+      <Box justifyContent="center">
         <Box>
           <Text
             ml={10}
@@ -214,7 +214,7 @@ function Overview() {
           </SimpleGrid>
         ))}
         {items.map((item) => (
-          <HStack key={item.chain_id} mx={5}>
+          <HStack direction={["column", "row"]} key={item.chain_id} mx={5}>
             <Box p="6">
               <Box d="flex" alignItems="baseline">
                 <Badge color="Blue.900" rounded="full" px="2" bg="#319795">
@@ -254,70 +254,24 @@ function Overview() {
             </Box>
           </HStack>
         ))}
-        <SimpleGrid alignContent="center" columns={[2, null, 1]} mt={15}>
-          <Box>
-            <Text
-              ml={10}
-              right={2}
-              letterSpacing={1}
-              fontSize="lg"
-              fontWeight="thin"
-              decoration="lightblue"
-              textTransform="uppercase"
-            >
-              Liquidity Chart
-            </Text>
-          </Box>
-          <Box
-            my={5}
-            w="full"
-            maxW="md"
-            mx={10}
-            px={5}
-            ps={5}
-            py={3}
-            bg={BoxBgColor}
-            shadow="xl"
-            rounded="md "
-            borderRadius="lg"
-            borderWidth={1}
-            borderColor={BoxBorderColor}
-            h="400px"
-            minW="72%"
-          >
-            <LiquidityChart liquid={liquidData} />
-          </Box>
-          <Text
-            ml={10}
-            right={2}
-            letterSpacing={1}
-            fontSize="lg"
-            fontWeight="thin"
-            decoration="lightblue"
-            textTransform="uppercase"
-          >
-            Volume Chart
-          </Text>
-          <Box
-            my={5}
-            w="full"
-            mx={10}
-            maxW="md"
-            px={5}
-            ps={5}
-            py={3}
-            bg={BoxBgColor}
-            shadow="xl"
-            rounded="md "
-            borderRadius="lg"
-            borderWidth={1}
-            borderColor={BoxBorderColor}
-            h="400px"
-            minW="72%"
-          >
-            <VolumeChart Volume={VolumeData} />
-          </Box>
-        </SimpleGrid>
+
+        <Box
+          my={5}
+          w={[300, 400, 1100]}
+          mx={10}
+          px={5}
+          ps={5}
+          py={3}
+          bg={BoxBgColor}
+          shadow="xl"
+          rounded="md "
+          borderRadius="lg"
+          borderWidth={1}
+          borderColor={BoxBorderColor}
+          h="50em"
+          as="iframe"
+          src="https://tokenterminal.com/terminal/projects/pangolin/embed/key_metrics"
+        />
       </Box>
     </>
   );

@@ -4,6 +4,7 @@ import { Box, Text, useColorModeValue } from "@chakra-ui/react";
 import SelectButton from "./SelectButton";
 import Balances from "./Balances";
 import Transaction from "./Transaction";
+import { LookUpUnstoppable } from "../..";
 
 // COVALENT API Key
 const API_KEY = process.env.NEXT_PUBLIC_COVALENTKEY;
@@ -60,7 +61,7 @@ function WalletInterface() {
           Overview
         </Text>
       </Box>
-      <Box mx="25%" mt={10}>
+      {/* <Box mx="25%" mt={10}>
         <SelectButton getWallet={getWallet} />
       </Box>
 
@@ -94,7 +95,9 @@ function WalletInterface() {
           Transaction History
         </Text>
         <Transaction getTransaction={items} />
-      </Box>
+      </Box> */}
+
+      <LookUpUnstoppable />
     </Box>
   );
 }

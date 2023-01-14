@@ -38,6 +38,7 @@ export default function SelectButton(props) {
 
   return (
     <Box
+      display={{ base: "none", md: "flex" }}
       as="nav"
       pos="fixed"
       top="0"
