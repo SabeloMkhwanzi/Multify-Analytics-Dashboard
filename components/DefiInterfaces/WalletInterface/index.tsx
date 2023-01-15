@@ -4,7 +4,7 @@ import { Box, Text, useColorModeValue } from "@chakra-ui/react";
 import SelectButton from "./SelectButton";
 import Balances from "./Balances";
 import Transaction from "./Transaction";
-import { LookUpUnstoppable } from "../..";
+import { LookUpUnstoppable, ResolutionUns } from "../..";
 
 // COVALENT API Key
 const API_KEY = process.env.NEXT_PUBLIC_COVALENTKEY;
@@ -46,7 +46,7 @@ function WalletInterface() {
           decoration="lightblue"
           textTransform="uppercase"
         >
-          Wallet Analytics
+          Search a Unstoppable Domain
         </Text>
         <Text
           ml={10}
@@ -98,6 +98,7 @@ function WalletInterface() {
       </Box> */}
 
       <LookUpUnstoppable />
+      <ResolutionUns />
     </Box>
   );
 }

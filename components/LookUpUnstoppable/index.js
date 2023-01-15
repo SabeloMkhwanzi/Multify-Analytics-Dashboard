@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Input, Button, Center } from "@chakra-ui/react";
+import { Input, Button, Center, Text } from "@chakra-ui/react";
 
-function App() {
+export default function LookUpUnstoppable() {
   const API_URL = "https://resolve.unstoppabledomains.com/domains/brad.crypto";
   const API_KEY = "vuyNRJm80wC1VRjt6aOr71XiUo1jrSom";
 
@@ -30,23 +30,28 @@ function App() {
   }
 
   return (
-    <Center>
+    <Center mt={20}>
       <div className="text-center">
-        <div>
-          <h1>Search a Unstoppable Domain</h1>
-        </div>
         <form onSubmit={processLookup}>
           <div>
             <center>
               <Input
                 id="domain"
                 type="text"
-                placeholder="Enter a domain name (Ex : sambitsargam.crypto)"
-                aria-label="Enter a domain name"
-                aria-describedby="button-addon"
+                placeholder="Enter a domain brad.crypto"
                 autoComplete="off"
               />
-              <Button type="submit" id="btn">
+              <Button
+                color="#00AF91"
+                bgColor="gray.800"
+                variant="outline"
+                borderRadius="xl"
+                shadow="lg"
+                size="md"
+                my={5}
+                type="submit"
+                id="btn"
+              >
                 Search
               </Button>
             </center>
@@ -124,13 +129,11 @@ function App() {
             </div>
           </div>
         ) : (
-          <div>
-            <b>Search a domain</b>
-          </div>
+          <Center>
+            <Text>UNS Resolution</Text>
+          </Center>
         )}
       </div>
     </Center>
   );
 }
-
-export default App;

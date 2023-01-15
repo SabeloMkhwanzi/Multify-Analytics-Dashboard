@@ -24,3 +24,4 @@ export { default as Transaction } from "./DefiInterfaces/WalletInterface/Transac
 //export { default as SwapInterface } from "./DefiInterfaces/DexSwapLayout/SwapInterface";
 export { default as DexSelectButton } from "./DefiInterfaces/DexSwapLayout/DexSelectButton";
 export { default as LookUpUnstoppable } from "./LookUpUnstoppable";
+export { default as ResolutionUns } from "./ResolutionUns";
