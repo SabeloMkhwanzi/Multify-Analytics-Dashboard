@@ -4,7 +4,7 @@ import { Input, Button, Center, Text, Badge, Box } from "@chakra-ui/react";
 
 export default function LookUpUnstoppable() {
   const API_URL = "https://resolve.unstoppabledomains.com/domains/";
-  const API_KEY = process.env.NEXT_PUBLIC_UNSTOPPABLE_RESOLUTION_API_KEY;
+  const API_KEY = process.env.NEXT_PUBLIC_UNSTOPPABLERESOLUTIONAPIKEY;
 
   const [stats, setStats] = useState(null);
 
