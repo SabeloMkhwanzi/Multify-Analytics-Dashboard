@@ -38,11 +38,7 @@
 
 ##### 1. Home Page DarkMode
 
-![HomePage](https://github.com/SabeloMkhwanzi/Multify-Analytics-Dashboard/blob/main/public/Multify-homepage-GR13-Hackathon1.jpg)
-
-##### 2. Home Page LightMode
-
-![HomePage](https://github.com/SabeloMkhwanzi/Multify-Analytics-Dashboard/blob/main/public/Multify-homepage-GR13-Hackathon2.jpg)
+![HomePage](https://github.com/SabeloMkhwanzi/Multify-Analytics-Dashboard/blob/main/public/multify-updated1.png)
 
 ##### 3. Pools
 
@@ -50,11 +46,7 @@
 
 ##### 4. Wallet
 
-![Wallet](https://github.com/SabeloMkhwanzi/Multify-Analytics-Dashboard/blob/main/public/Multify-wallet-GR13-Hackathon3.jpg)
-
-##### 4. Dex
-
-![Dex](https://github.com/SabeloMkhwanzi/Multify-Analytics-Dashboard/blob/main/public/Multify-dex-GR13-Hackathon4.jpg)
+![Wallet](https://github.com/SabeloMkhwanzi/Multify-Analytics-Dashboard/blob/main/public/multify-updated2.png)
 
 #### 1. Ticker Component: supported DEXes
 
