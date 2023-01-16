@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Center, Text, Input } from "@chakra-ui/react";
 import Resolution from "@unstoppabledomains/resolution";
-import { useForm } from "react-hook-form";
+import { set, useForm } from "react-hook-form";
 import { getEllipsisTxt } from "../../utils";
 
 //const ethereumProviderUrl = process.env.NEXT_PUBLIC_REACT_APP_ALCHEMY_API;
@@ -33,6 +33,7 @@ export default function ResolutionUns() {
   const [address, setAddress] = useState(null);
   const [domain, setDomain] = useState(null);
   const [hashIpfs, setHashIpfs] = useState(null);
+  const [records, setRecords] = useState(null);
 
   function resolve(domain, currency) {
     resolution
@@ -50,7 +51,8 @@ export default function ResolutionUns() {
       .records(domain, [record])
       .then((value) => {
         setStats(value);
-        console.log(`Domain ${domain} ${record} is: ${value.meta}`);
+        setRecords(record);
+        console.log(`Domain ${domain} ${record} is: ${value}`);
       })
       .catch(console.error);
   }
@@ -108,6 +110,7 @@ export default function ResolutionUns() {
       </Center>
       <Center>
         <Text>{JSON.stringify(stats, null, 2)}</Text>
+        <Text>{JSON.stringify(records, null, 1)}</Text>
       </Center>
     </>
   );

@@ -167,7 +167,7 @@ export default function HorizontalNarbar() {
               >
                 <Link href="/walletanalyse">
                   <Text textTransform="uppercase" letterSpacing={1}>
-                    Wallet Analytics
+                    Wallet RESOLUTION
                   </Text>
                 </Link>
               </Button>

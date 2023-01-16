@@ -121,7 +121,7 @@ export default function VerticalNarbar() {
         </Box>
         <NavItem icon={GiWallet}>
           <Link href="/walletanalyse">
-            <Text>Wallet Analytics</Text>
+            <Text>Wallet RESOLUTION</Text>
           </Link>
         </NavItem>
         {/* <NavItem icon={RiExchangeDollarFill}>

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Input, Button, Center, Text } from "@chakra-ui/react";
+import { Input, Button, Center, Text, Badge, Box } from "@chakra-ui/react";
 
 export default function LookUpUnstoppable() {
-  const API_URL = "https://resolve.unstoppabledomains.com/domains/brad.crypto";
-  const API_KEY = "vuyNRJm80wC1VRjt6aOr71XiUo1jrSom";
+  const API_URL = "https://resolve.unstoppabledomains.com/domains/";
+  const API_KEY = process.env.NEXT_PUBLIC_UNSTOPPABLE_RESOLUTION_API_KEY;
 
   const [stats, setStats] = useState(null);
 
@@ -30,15 +30,17 @@ export default function LookUpUnstoppable() {
   }
 
   return (
-    <Center mt={20}>
-      <div className="text-center">
+    <>
+      {" "}
+      <Center>
         <form onSubmit={processLookup}>
-          <div>
+          <Box>
             <center>
               <Input
+                borderColor="gray.500"
+                placeholder="Enter Address or Web3 domain"
                 id="domain"
                 type="text"
-                placeholder="Enter a domain brad.crypto"
                 autoComplete="off"
               />
               <Button
@@ -52,88 +54,218 @@ export default function LookUpUnstoppable() {
                 type="submit"
                 id="btn"
               >
-                Search
+                Click to Search
               </Button>
             </center>
-          </div>
+          </Box>
         </form>
+      </Center>
+      <Center>
         {stats ? (
-          <div className="domain-card">
-            <h2>{stats.meta.domain}</h2>
-            <h3>Owned by {stats.meta.owner}</h3>
-            <span>On the {stats.meta.blockchain} blockchain</span>
+          <Box className="domain-card">
+            <Center my={3}>
+              <Text
+                as="h1"
+                bgGradient="linear(to-l, #7928CA, #01AF7D)"
+                bgClip="text"
+                fontSize={["sm", "md", "lg", "4xl"]}
+                fontWeight="extrabold"
+              >
+                {stats.meta.domain}
+              </Text>
+            </Center>
+
+            <Text fontWeight="bold">
+              Owner:{" "}
+              <Text fontWeight="normal" fontSize={["sm", "md", "lg"]} as="samp">
+                {stats.meta.owner}
+              </Text>{" "}
+            </Text>
+
+            <Text fontWeight="bold">
+              Blockchain:{" "}
+              <Text fontWeight="normal" fontSize={["sm", "md", "lg"]} as="samp">
+                {stats.meta.blockchain}
+              </Text>{" "}
+            </Text>
 
             {stats.records["whois.for_sale.value"] ? (
-              <div className="onsale">On Sale</div>
+              <Badge
+                colorScheme="green"
+                borderRadius="full"
+                fontSize="0.8em"
+                ml="2"
+                className="onsale"
+              >
+                On Sale
+              </Badge>
             ) : (
-              <div className="nosale">Not on Sale</div>
+              <Badge
+                colorScheme="red"
+                borderRadius="full"
+                fontSize="0.8em"
+                ml="2"
+                className="onsale"
+              >
+                Not on Sale
+              </Badge>
             )}
-            <div>
-              <span>Mail: {stats.records["whois.email.value"]}</span>
-              <div>
-                <b>No Mail found</b>
-              </div>
-            </div>
-            <div>
+
+            <Box>
+              <Text fontWeight="normal" fontSize={["sm", "md", "lg"]} as="samp">
+                {stats.records["whois.email.value"]}
+              </Text>
+            </Box>
+
+            <Box>
               {stats.records["ipfs.redirect_domain.value"] ? (
                 <span>
                   Website : {stats.records["ipfs.redirect_domain.value"]}
                 </span>
               ) : (
-                <div>
+                <Box>
                   <b>No Website found</b>
-                </div>
+                </Box>
               )}
-            </div>
+            </Box>
+
             <div>
-              <h3>
-                <strong>
-                  Here are the differents blockchain addresses in the domain
-                  profile
-                </strong>
-              </h3>
-              <div>
-                {stats.records["crypto.ETH.address"] ? (
-                  <span>
-                    ETH address : {stats.records["crypto.ETH.address"]}
-                  </span>
-                ) : (
-                  <div>
-                    <b>No ETH address</b>
-                  </div>
-                )}
-              </div>
-              <div>
+              <Box mt={5}>
+                <Text
+                  fontWeight="semibold"
+                  fontSize={["sm", "md", "lg"]}
+                  as="u"
+                >
+                  The various blockchain addresses in the domain profile are
+                  listed below.
+                </Text>
+              </Box>
+
+              <Box>
                 {stats.records["crypto.MATIC.version.MATIC.address"] ? (
-                  <span>
+                  <Text
+                    fontWeight="normal"
+                    fontSize={["sm", "md", "lg"]}
+                    as="samp"
+                  >
                     Matic address :{" "}
                     {stats.records["crypto.MATIC.version.MATIC.address"]}
-                  </span>
+                  </Text>
                 ) : (
-                  <div>
+                  <Box>
                     <b>No Matic address</b>
-                  </div>
+                  </Box>
                 )}
-              </div>
+              </Box>
 
-              <button className="contact">
-                <a
-                  className="contactlink"
-                  target="_blank"
-                  href={`${stats.records["ipfs.redirect_domain.value"]}`}
-                  rel="noreferrer"
+              <Box>
+                {stats.records["crypto.ETH.address"] ? (
+                  <Text
+                    fontWeight="normal"
+                    fontSize={["sm", "md", "lg"]}
+                    as="samp"
+                  >
+                    ETH address : {stats.records["crypto.ETH.address"]}
+                  </Text>
+                ) : (
+                  <Box>
+                    <b>No ETH address</b>
+                  </Box>
+                )}
+              </Box>
+
+              <Box>
+                {stats.records["crypto.USDT.version.ERC20.address"] ? (
+                  <Text
+                    fontWeight="normal"
+                    fontSize={["sm", "md", "lg"]}
+                    as="samp"
+                  >
+                    USDT address :{" "}
+                    {stats.records["crypto.USDT.version.ERC20.address"]}
+                  </Text>
+                ) : (
+                  <Box>
+                    <b>No USDT address</b>
+                  </Box>
+                )}
+              </Box>
+
+              <Box>
+                {stats.records["crypto.BTC.address"] ? (
+                  <Text
+                    fontWeight="normal"
+                    fontSize={["sm", "md", "lg"]}
+                    as="samp"
+                  >
+                    BTC address : {stats.records["crypto.BTC.address"]}
+                  </Text>
+                ) : (
+                  <Box>
+                    <b>No BTC address</b>
+                  </Box>
+                )}
+              </Box>
+
+              <Box>
+                {stats.records["crypto.SOL.address"] ? (
+                  <Text
+                    fontWeight="normal"
+                    fontSize={["sm", "md", "lg"]}
+                    as="samp"
+                  >
+                    SOL address : {stats.records["crypto.SOL.address"]}
+                  </Text>
+                ) : (
+                  <Box>
+                    <b>No SOL address</b>
+                  </Box>
+                )}
+              </Box>
+
+              <Box>
+                {stats.records["crypto.ADA.address"] ? (
+                  <Text
+                    fontWeight="normal"
+                    fontSize={["sm", "md", "lg"]}
+                    as="samp"
+                  >
+                    ADA address : {stats.records["crypto.ADA.address"]}
+                  </Text>
+                ) : (
+                  <Box>
+                    <b>No ADA address</b>
+                  </Box>
+                )}
+              </Box>
+              <Center mt={5}>
+                <Button
+                  color="#00AF91"
+                  bgColor="gray.800"
+                  variant="outline"
+                  borderRadius="xl"
+                  shadow="lg"
+                  size="md"
+                  className="contact"
                 >
-                  Website
-                </a>
-              </button>
+                  <a
+                    className="contactlink"
+                    target="_blank"
+                    href={`${stats.records["ipfs.redirect_domain.value"]}`}
+                    rel="noreferrer"
+                  >
+                    Visit Website
+                  </a>
+                </Button>
+              </Center>
             </div>
-          </div>
+          </Box>
         ) : (
           <Center>
             <Text>UNS Resolution</Text>
           </Center>
         )}
-      </div>
-    </Center>
+      </Center>
+    </>
   );
 }
