@@ -1,11 +1,20 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Input, Button, Center, Text, Badge, Box } from "@chakra-ui/react";
+import {
+  Input,
+  Button,
+  Center,
+  Text,
+  Badge,
+  Box,
+  Spinner,
+} from "@chakra-ui/react";
+
+const API_URL = "https://resolve.unstoppabledomains.com/domains/";
+const API_KEY = process.env.NEXT_PUBLIC_UNSTOPPABLERESOLUTIONAPIKEY;
 
 export default function LookUpUnstoppable() {
-  const API_URL = "https://resolve.unstoppabledomains.com/domains/";
-  const API_KEY = process.env.NEXT_PUBLIC_UNSTOPPABLERESOLUTIONAPIKEY;
-
+  const [loading, setLoading] = useState(false);
   const [stats, setStats] = useState(null);
 
   function processLookup(e) {
@@ -13,6 +22,8 @@ export default function LookUpUnstoppable() {
 
     let domain = document.getElementById("domain").value;
     if (!domain) return;
+
+    setLoading(true);
 
     axios
       .get(API_URL + domain, {
@@ -23,10 +34,25 @@ export default function LookUpUnstoppable() {
       .then((res) => {
         setStats(res.data);
         console.log(res.data);
+        setLoading(false);
       })
       .catch((err) => {
         setStats();
       });
+  }
+
+  if (loading) {
+    return (
+      <Center>
+        <Spinner
+          thickness="4px"
+          speed="0.65s"
+          emptyColor="#6A39C0"
+          color="#00AF91"
+          size="xl"
+        />
+      </Center>
+    );
   }
 
   return (
