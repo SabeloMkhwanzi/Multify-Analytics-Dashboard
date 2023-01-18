@@ -7,14 +7,17 @@ import {
   Text,
   Badge,
   Box,
+  Alert,
   Spinner,
 } from "@chakra-ui/react";
+import { AlertIcon } from "@chakra-ui/icons";
 
 const API_URL = "https://resolve.unstoppabledomains.com/domains/";
 const API_KEY = process.env.NEXT_PUBLIC_UNSTOPPABLERESOLUTIONAPIKEY;
 
 export default function LookUpUnstoppable() {
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
   const [stats, setStats] = useState(null);
 
   function processLookup(e) {
@@ -36,8 +39,9 @@ export default function LookUpUnstoppable() {
         console.log(res.data);
         setLoading(false);
       })
-      .catch((err) => {
-        setStats();
+      .catch(() => {
+        setLoading(false);
+        alert("User Entered an Invalid UD Resolution");
       });
   }
 
